@@ -24,3 +24,6 @@ Thumbs.db
 # local runtime artifacts
 backend/.mypy_cache/
 backend/.ruff_cache/
+
+# local databases
+*.db
