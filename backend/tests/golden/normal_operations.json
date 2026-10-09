@@ -1,0 +1,3376 @@
+{
+ "alerts": [],
+ "failure_points": [],
+ "model_version": "1.0.0",
+ "series_first_24": [
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 4,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 20,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 0,
+   "margins": {
+    "beds": 0.2,
+    "ed_flow": 0.2308,
+    "power": 0.4937,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 379.72,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 134.72,
+    "reserve_kw": 370.28,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 6,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 14,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 119.0,
+     "cover_hours": 36.0,
+     "delivered": 119.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 119.0,
+     "cover_hours": 36.0,
+     "delivered": 119.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 36.0,
+     "oxygen": 36.0
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 49.3707,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 21.464,
+   "units": {
+    "ed": {
+     "available_beds": 6,
+     "beds_over_usable": 0,
+     "occupancy_pct": 76.92307692307692,
+     "occupied": 20,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 20,
+     "beds_over_usable": 0,
+     "occupancy_pct": 80.0,
+     "occupied": 80,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 21.464
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 7,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 1,
+   "margins": {
+    "beds": 0.21,
+    "ed_flow": 0.2692,
+    "power": 0.4979,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 376.6,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 131.6,
+    "reserve_kw": 373.4,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 14,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 118.0,
+     "cover_hours": 36.3051,
+     "delivered": 118.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 118.0,
+     "cover_hours": 36.3051,
+     "delivered": 118.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 36.3051,
+     "oxygen": 36.3051
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 49.7867,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 20.67,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 21,
+     "beds_over_usable": 0,
+     "occupancy_pct": 79.0,
+     "occupied": 79,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 20.67
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 7,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 4,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 17,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 2,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.3462,
+    "power": 0.5005,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 374.65,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 129.65,
+    "reserve_kw": 375.35,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 14,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 116.5,
+     "cover_hours": 36.7725,
+     "delivered": 116.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 116.5,
+     "cover_hours": 36.7725,
+     "delivered": 116.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 36.7725,
+     "oxygen": 36.7725
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 50.0467,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 20.17,
+   "units": {
+    "ed": {
+     "available_beds": 9,
+     "beds_over_usable": 0,
+     "occupancy_pct": 65.38461538461539,
+     "occupied": 17,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 20.17
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 5,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 16,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 3,
+   "margins": {
+    "beds": 0.21,
+    "ed_flow": 0.3846,
+    "power": 0.5013,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 374.0,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 129.0,
+    "reserve_kw": 376.0,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 114.5,
+     "cover_hours": 37.4148,
+     "delivered": 114.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 114.5,
+     "cover_hours": 37.4148,
+     "delivered": 114.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.4148,
+     "oxygen": 37.4148
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 50.1333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 20.0,
+   "units": {
+    "ed": {
+     "available_beds": 10,
+     "beds_over_usable": 0,
+     "occupancy_pct": 61.53846153846154,
+     "occupied": 16,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 21,
+     "beds_over_usable": 0,
+     "occupancy_pct": 79.0,
+     "occupied": 79,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 20.0
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 5,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 4,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 16,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 4,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.3846,
+    "power": 0.5005,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 374.65,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 129.65,
+    "reserve_kw": 375.35,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 14,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 115.0,
+     "cover_hours": 37.2522,
+     "delivered": 115.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 115.0,
+     "cover_hours": 37.2522,
+     "delivered": 115.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.2522,
+     "oxygen": 37.2522
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 50.0467,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 20.17,
+   "units": {
+    "ed": {
+     "available_beds": 10,
+     "beds_over_usable": 0,
+     "occupancy_pct": 61.53846153846154,
+     "occupied": 16,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 20.17
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 16,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 5,
+   "margins": {
+    "beds": 0.2222,
+    "ed_flow": 0.3846,
+    "power": 0.4979,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 376.6,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 131.6,
+    "reserve_kw": 373.4,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 114.0,
+     "cover_hours": 37.5789,
+     "delivered": 114.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 114.0,
+     "cover_hours": 37.5789,
+     "delivered": 114.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.5789,
+     "oxygen": 37.5789
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 49.7867,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 20.67,
+   "units": {
+    "ed": {
+     "available_beds": 10,
+     "beds_over_usable": 0,
+     "occupancy_pct": 61.53846153846154,
+     "occupied": 16,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 20.67
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 7,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 15,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 6,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.4231,
+    "power": 0.4937,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 379.72,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 134.72,
+    "reserve_kw": 370.28,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.0,
+     "cover_hours": 37.9115,
+     "delivered": 113.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.0,
+     "cover_hours": 37.9115,
+     "delivered": 113.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.9115,
+     "oxygen": 37.9115
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 49.3707,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 21.464,
+   "units": {
+    "ed": {
+     "available_beds": 11,
+     "beds_over_usable": 0,
+     "occupancy_pct": 57.69230769230769,
+     "occupied": 15,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 21.464
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 4,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 15,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 7,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.4231,
+    "power": 0.4883,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 383.75,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 138.75,
+    "reserve_kw": 366.25,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 110.5,
+     "cover_hours": 38.7692,
+     "delivered": 110.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 110.5,
+     "cover_hours": 38.7692,
+     "delivered": 110.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.7692,
+     "oxygen": 38.7692
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 48.8333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 22.5,
+   "units": {
+    "ed": {
+     "available_beds": 11,
+     "beds_over_usable": 0,
+     "occupancy_pct": 57.69230769230769,
+     "occupied": 15,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 22.5
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 5,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 16,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 8,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.3846,
+    "power": 0.4821,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 388.43,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 143.43,
+    "reserve_kw": 361.57,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 111.5,
+     "cover_hours": 38.4215,
+     "delivered": 111.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 111.5,
+     "cover_hours": 38.4215,
+     "delivered": 111.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.4215,
+     "oxygen": 38.4215
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 48.2093,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 23.706,
+   "units": {
+    "ed": {
+     "available_beds": 10,
+     "beds_over_usable": 0,
+     "occupancy_pct": 61.53846153846154,
+     "occupied": 16,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 23.706
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 16,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 9,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.3846,
+    "power": 0.4753,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 393.5,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 148.5,
+    "reserve_kw": 356.5,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 111.0,
+     "cover_hours": 38.5946,
+     "delivered": 111.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 111.0,
+     "cover_hours": 38.5946,
+     "delivered": 111.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.5946,
+     "oxygen": 38.5946
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 47.5333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 25.0,
+   "units": {
+    "ed": {
+     "available_beds": 10,
+     "beds_over_usable": 0,
+     "occupancy_pct": 61.53846153846154,
+     "occupied": 16,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 25.0
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 5,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 17,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 10,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.3462,
+    "power": 0.4686,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 398.57,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 153.57,
+    "reserve_kw": 351.43,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 4,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 111.0,
+     "cover_hours": 38.5946,
+     "delivered": 111.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 111.0,
+     "cover_hours": 38.5946,
+     "delivered": 111.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.5946,
+     "oxygen": 38.5946
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 46.8573,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 26.294,
+   "units": {
+    "ed": {
+     "available_beds": 9,
+     "beds_over_usable": 0,
+     "occupancy_pct": 65.38461538461539,
+     "occupied": 17,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 26.294
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 5,
+   "ed": {
+    "admitted_icu": 1,
+    "admitted_ward": 0,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 17,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 11,
+   "margins": {
+    "beds": 0.2222,
+    "ed_flow": 0.3462,
+    "power": 0.4623,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 403.25,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 158.25,
+    "reserve_kw": 346.75,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 111.5,
+     "cover_hours": 38.4215,
+     "delivered": 111.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 111.5,
+     "cover_hours": 38.4215,
+     "delivered": 111.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.4215,
+     "oxygen": 38.4215
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 46.2333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 27.5,
+   "units": {
+    "ed": {
+     "available_beds": 9,
+     "beds_over_usable": 0,
+     "occupancy_pct": 65.38461538461539,
+     "occupied": 17,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 27.5
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 17,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 12,
+   "margins": {
+    "beds": 0.2222,
+    "ed_flow": 0.3462,
+    "power": 0.4541,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 246.072,
+    "deficit_kw": 0.0,
+    "demand_kw": 409.424,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 163.352,
+    "reserve_kw": 340.576,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.7445,
+     "oxygen": 37.7445
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 45.4101,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 28.536,
+   "units": {
+    "ed": {
+     "available_beds": 9,
+     "beds_over_usable": 0,
+     "occupancy_pct": 65.38461538461539,
+     "occupied": 17,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 28.536
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 7,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 7,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 17,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 13,
+   "margins": {
+    "beds": 0.2222,
+    "ed_flow": 0.3462,
+    "power": 0.4455,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 247.66,
+    "deficit_kw": 0.0,
+    "demand_kw": 415.85,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 168.19,
+    "reserve_kw": 334.15,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.7445,
+     "oxygen": 37.7445
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 44.5533,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 29.33,
+   "units": {
+    "ed": {
+     "available_beds": 9,
+     "beds_over_usable": 0,
+     "occupancy_pct": 65.38461538461539,
+     "occupied": 17,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 29.33
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 7,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 14,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.2692,
+    "power": 0.4404,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 248.66,
+    "deficit_kw": 0.0,
+    "demand_kw": 419.67,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 171.01,
+    "reserve_kw": 330.33,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.7445,
+     "oxygen": 37.7445
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 44.044,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 29.83,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 29.83
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 15,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.2692,
+    "power": 0.4387,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 249.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 421.0,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 172.0,
+    "reserve_kw": 329.0,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 112.5,
+     "cover_hours": 38.08,
+     "delivered": 112.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 112.5,
+     "cover_hours": 38.08,
+     "delivered": 112.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.08,
+     "oxygen": 38.08
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 43.8667,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 30.0,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 30.0
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 7,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 20,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 16,
+   "margins": {
+    "beds": 0.23,
+    "ed_flow": 0.2308,
+    "power": 0.4404,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 248.66,
+    "deficit_kw": 0.0,
+    "demand_kw": 419.67,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 171.01,
+    "reserve_kw": 330.33,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 112.5,
+     "cover_hours": 38.08,
+     "delivered": 112.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 112.5,
+     "cover_hours": 38.08,
+     "delivered": 112.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 38.08,
+     "oxygen": 38.08
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 44.044,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 29.83,
+   "units": {
+    "ed": {
+     "available_beds": 6,
+     "beds_over_usable": 0,
+     "occupancy_pct": 76.92307692307692,
+     "occupied": 20,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 29.83
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 1,
+    "admitted_ward": 1,
+    "arrivals": 7,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 1
+   },
+   "grid_fraction": 1.0,
+   "hour": 17,
+   "margins": {
+    "beds": 0.2222,
+    "ed_flow": 0.2692,
+    "power": 0.4455,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 247.66,
+    "deficit_kw": 0.0,
+    "demand_kw": 415.85,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 168.19,
+    "reserve_kw": 334.15,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.0,
+     "cover_hours": 37.9115,
+     "delivered": 113.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.0,
+     "cover_hours": 37.9115,
+     "delivered": 113.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.9115,
+     "oxygen": 37.9115
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 44.5533,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 29.33,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 29.33
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 18,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.2692,
+    "power": 0.4541,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 246.072,
+    "deficit_kw": 0.0,
+    "demand_kw": 409.424,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 163.352,
+    "reserve_kw": 340.576,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 114.5,
+     "cover_hours": 37.4148,
+     "delivered": 114.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 114.5,
+     "cover_hours": 37.4148,
+     "delivered": 114.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.4148,
+     "oxygen": 37.4148
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 45.4101,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 28.536,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 28.536
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 7,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 18,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 19,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.3077,
+    "power": 0.4623,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 403.25,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 158.25,
+    "reserve_kw": 346.75,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 115.5,
+     "cover_hours": 37.0909,
+     "delivered": 115.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 115.5,
+     "cover_hours": 37.0909,
+     "delivered": 115.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.0909,
+     "oxygen": 37.0909
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 46.2333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 27.5,
+   "units": {
+    "ed": {
+     "available_beds": 8,
+     "beds_over_usable": 0,
+     "occupancy_pct": 69.23076923076923,
+     "occupied": 18,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 27.5
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 0,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 20,
+   "margins": {
+    "beds": 0.2222,
+    "ed_flow": 0.2692,
+    "power": 0.4686,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 398.57,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 153.57,
+    "reserve_kw": 351.43,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 115.0,
+     "cover_hours": 37.2522,
+     "delivered": 115.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 115.0,
+     "cover_hours": 37.2522,
+     "delivered": 115.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.2522,
+     "oxygen": 37.2522
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 46.8573,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 26.294,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 23,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.0,
+     "occupied": 77,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 26.294
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 6,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 19,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 21,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.2692,
+    "power": 0.4753,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 393.5,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 148.5,
+    "reserve_kw": 356.5,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 114.5,
+     "cover_hours": 37.4148,
+     "delivered": 114.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 114.5,
+     "cover_hours": 37.4148,
+     "delivered": 114.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.4148,
+     "oxygen": 37.4148
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 47.5333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 25.0,
+   "units": {
+    "ed": {
+     "available_beds": 7,
+     "beds_over_usable": 0,
+     "occupancy_pct": 73.07692307692308,
+     "occupied": 19,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 25.0
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 6,
+   "ed": {
+    "admitted_icu": 0,
+    "admitted_ward": 1,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 18,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 22,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.3077,
+    "power": 0.4821,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 388.43,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 143.43,
+    "reserve_kw": 361.57,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.5,
+     "cover_hours": 37.7445,
+     "delivered": 113.5,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.7445,
+     "oxygen": 37.7445
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 48.2093,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 23.706,
+   "units": {
+    "ed": {
+     "available_beds": 8,
+     "beds_over_usable": 0,
+     "occupancy_pct": 69.23076923076923,
+     "occupied": 18,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 5,
+     "beds_over_usable": 0,
+     "occupancy_pct": 72.22222222222223,
+     "occupied": 13,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 23.706
+   }
+  },
+  {
+   "access": {
+    "arrival_multiplier": 1.0,
+    "delivery_fraction": 1.0,
+    "staff_access_fraction": 1.0
+   },
+   "binding_constraint": "beds",
+   "discharged": 5,
+   "ed": {
+    "admitted_icu": 1,
+    "admitted_ward": 1,
+    "arrivals": 5,
+    "boarding_icu": 0,
+    "boarding_ward": 0,
+    "in_service": 17,
+    "waiting": 0
+   },
+   "grid_fraction": 1.0,
+   "hour": 23,
+   "margins": {
+    "beds": 0.22,
+    "ed_flow": 0.3462,
+    "power": 0.4883,
+    "staff": 0.2857,
+    "supplies": 1.0
+   },
+   "power": {
+    "available_supply_kw": 750.0,
+    "critical_at_risk_kw": 0.0,
+    "critical_demand_kw": 245.0,
+    "deficit_kw": 0.0,
+    "demand_kw": 383.75,
+    "fuel_l": 2500.0,
+    "gen_available_kw": 300.0,
+    "gen_output_kw": 0.0,
+    "grid_supply_kw": 450.0,
+    "noncritical_unshed_kw": 138.75,
+    "reserve_kw": 366.25,
+    "shed_kw": 0.0
+   },
+   "staffing": {
+    "ed": {
+     "available": 10,
+     "required": 5,
+     "shortfall": 0,
+     "staffed_capacity": 40
+    },
+    "icu": {
+     "available": 9,
+     "required": 7,
+     "shortfall": 0,
+     "staffed_capacity": 18
+    },
+    "ward": {
+     "available": 18,
+     "required": 13,
+     "shortfall": 0,
+     "staffed_capacity": 108
+    }
+   },
+   "supplies": {
+    "essential_meds": {
+     "consumption": 113.0,
+     "cover_hours": 37.9115,
+     "delivered": 113.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    },
+    "oxygen": {
+     "consumption": 113.0,
+     "cover_hours": 37.9115,
+     "delivered": 113.0,
+     "stock": 4284.0,
+     "stockout": false,
+     "unmet": 0.0
+    }
+   },
+   "supply": {
+    "cover_hours": {
+     "essential_meds": 37.9115,
+     "oxygen": 37.9115
+    },
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10,
+    "fuel_hours": 29.7619,
+    "fuel_low_hours": 12.0,
+    "low_cover_hours": 24.0,
+    "reserve_low_pct": 10.0,
+    "reserve_pct": 48.8333,
+    "scheduled_delivery_rate": {
+     "essential_meds": 119.0,
+     "oxygen": 119.0
+    },
+    "stockout": {
+     "essential_meds": false,
+     "oxygen": false
+    },
+    "supply_low": false
+   },
+   "surge_open": {
+    "ed": 0,
+    "icu": 0,
+    "ward": 0
+   },
+   "temperature_c": 22.5,
+   "units": {
+    "ed": {
+     "available_beds": 9,
+     "beds_over_usable": 0,
+     "occupancy_pct": 65.38461538461539,
+     "occupied": 17,
+     "open_beds": 26,
+     "status": "ok",
+     "usable_beds": 26
+    },
+    "icu": {
+     "available_beds": 4,
+     "beds_over_usable": 0,
+     "occupancy_pct": 77.77777777777777,
+     "occupied": 14,
+     "open_beds": 20,
+     "status": "ok",
+     "usable_beds": 18
+    },
+    "ward": {
+     "available_beds": 22,
+     "beds_over_usable": 0,
+     "occupancy_pct": 78.0,
+     "occupied": 78,
+     "open_beds": 100,
+     "status": "ok",
+     "usable_beds": 100
+    }
+   },
+   "weather": {
+    "temperature_c": 22.5
+   }
+  }
+ ],
+ "summary": {
+  "cascade_children": 0,
+  "energy_unserved_kwh": 0.0,
+  "first_failure": null,
+  "fuel_remaining_l": 2500.0,
+  "hours_beds_over_usable": 0,
+  "hours_critical_load_at_risk": 0,
+  "hours_icu_above_threshold": 0,
+  "hours_power_deficit": 0,
+  "hours_supply_stockout": {
+   "essential_meds": 0,
+   "oxygen": 0
+  },
+  "hours_to_fuel_exhaustion": null,
+  "hours_ward_above_threshold": 0,
+  "min_power_reserve_kw": 329.0,
+  "min_supply_cover_hours": {
+   "essential_meds": 36.0,
+   "oxygen": 36.0
+  },
+  "overflow_patient_hours": 1,
+  "peak_ed_boarding": 0,
+  "peak_ed_occupancy_pct": 76.92,
+  "peak_ed_waiting": 1,
+  "peak_icu_occupancy_pct": 77.78,
+  "peak_power_deficit_kw": 0.0,
+  "peak_power_demand_kw": 421.0,
+  "peak_ward_occupancy_pct": 80.0,
+  "resilience_index": 99.99,
+  "root_failures": 0,
+  "staff_shortfall_nurse_hours": 0,
+  "time_to_first_failure_hours": null
+ }
+}
