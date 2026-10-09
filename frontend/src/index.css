@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0a0f1c;
+  --color-ink-900: #0f1626;
+  --color-ink-850: #131c30;
+  --color-ink-800: #1a2438;
+  --color-ink-700: #243049;
+  --color-ink-600: #33415e;
+  --color-mist-400: #8b9bb8;
+  --color-mist-300: #aab6cf;
+  --color-mist-200: #ccd5e6;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-amber-400: #fbbf24;
+  --color-rose-400: #fb7185;
+  --color-violet-400: #a78bfa;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink-950 text-mist-200 font-sans antialiased;
+}
+
+/* status colors also carry an icon + text everywhere (never colour alone) */
+.status-ok { @apply text-teal-400; }
+.status-warn { @apply text-amber-400; }
+.status-critical { @apply text-rose-400; }
+.status-unavailable { @apply text-violet-400; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body { background: white !important; color: black !important; }
+  .no-print { display: none !important; }
+}

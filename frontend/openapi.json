@@ -1,0 +1,2490 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "HospitalShield AI API",
+  "description": "Climate-resilient hospital digital twin (HC-03 planning prototype, synthetic data).",
+  "version": "1.0.0"
+ },
+ "paths": {
+  "/health": {
+   "get": {
+    "summary": "Health",
+    "description": "Liveness plus optional services, reported as optional (never failure).",
+    "operationId": "health_health_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Health Health Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/hospital/baseline": {
+   "get": {
+    "summary": "Hospital Baseline",
+    "description": "The SYNTHETIC baseline hospital configuration.",
+    "operationId": "hospital_baseline_api_v1_hospital_baseline_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Hospital Baseline Api V1 Hospital Baseline Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/model-card": {
+   "get": {
+    "summary": "Model Card",
+    "description": "Model card: purpose, scope, honest limitations (B1).",
+    "operationId": "model_card_api_v1_model_card_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Model Card Api V1 Model Card Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/scenarios": {
+   "get": {
+    "summary": "Scenarios",
+    "description": "Presets and validated ranges for the Scenario Lab UI (B9).",
+    "operationId": "scenarios_api_v1_scenarios_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ScenarioInfo"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/weather": {
+   "get": {
+    "summary": "Weather",
+    "description": "Weather source status. The default demo weather is SYNTHETIC_PROFILE;\nlive Open-Meteo is optional and labelled REAL WEATHER when used.",
+    "operationId": "weather_api_v1_weather_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Weather Api V1 Weather Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/simulations": {
+   "post": {
+    "summary": "Create Simulation",
+    "operationId": "create_simulation_api_v1_simulations_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/SimulationRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SimulationResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/comparisons": {
+   "post": {
+    "summary": "Create Comparison",
+    "operationId": "create_comparison_api_v1_comparisons_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ComparisonRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ComparisonResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/plans": {
+   "post": {
+    "summary": "Create Plan",
+    "operationId": "create_plan_api_v1_plans_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/PlanRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PlanResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/simulations/{run_id}": {
+   "get": {
+    "summary": "Get Simulation",
+    "description": "Stored run history (Tier 2); 404 with the standard error shape.",
+    "operationId": "get_simulation_api_v1_simulations__run_id__get",
+    "parameters": [
+     {
+      "name": "run_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Run Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Get Simulation Api V1 Simulations  Run Id  Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/runs": {
+   "get": {
+    "summary": "List Simulations",
+    "description": "Recent runs (history is best-effort; empty when the store failed).",
+    "operationId": "list_simulations_api_v1_runs_get",
+    "parameters": [
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "default": 50,
+       "title": "Limit"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response List Simulations Api V1 Runs Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/ensembles": {
+   "post": {
+    "summary": "Ensembles",
+    "operationId": "ensembles_api_v1_ensembles_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/EnsembleRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Ensembles Api V1 Ensembles Post"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/sensitivity": {
+   "post": {
+    "summary": "Sensitivity",
+    "operationId": "sensitivity_api_v1_sensitivity_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/SensitivityRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response Sensitivity Api V1 Sensitivity Post"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/hospital/profiles": {
+   "get": {
+    "summary": "List Profiles",
+    "description": "All available hospital profiles (built-in demo plus uploaded).",
+    "operationId": "list_profiles_api_v1_hospital_profiles_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "title": "Response List Profiles Api V1 Hospital Profiles Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/hospital/upload": {
+   "post": {
+    "summary": "Upload Profile",
+    "description": "Upload a hospital configuration JSON (schema: data/hospital_template.json).\n\nThe strict engine parser validates every parameter; invalid files are\nrejected with 422 and per-field reasons. Nothing is clamped silently.",
+    "operationId": "upload_profile_api_v1_hospital_upload_post",
+    "requestBody": {
+     "content": {
+      "multipart/form-data": {
+       "schema": {
+        "$ref": "#/components/schemas/Body_upload_profile_api_v1_hospital_upload_post"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/UploadResult"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "AccessIn": {
+    "properties": {
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour",
+      "default": 18
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 0.0,
+      "title": "Duration Hours",
+      "default": 24
+     },
+     "staff_access_fraction": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Staff Access Fraction",
+      "default": 0.6
+     },
+     "delivery_fraction": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Delivery Fraction",
+      "default": 0.25
+     },
+     "arrival_multiplier": {
+      "type": "number",
+      "maximum": 3.0,
+      "minimum": 0.0,
+      "title": "Arrival Multiplier",
+      "default": 1.4
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "AccessIn"
+   },
+   "AccessRow": {
+    "properties": {
+     "staff_access_fraction": {
+      "type": "number",
+      "title": "Staff Access Fraction",
+      "default": 1.0
+     },
+     "delivery_fraction": {
+      "type": "number",
+      "title": "Delivery Fraction",
+      "default": 1.0
+     },
+     "arrival_multiplier": {
+      "type": "number",
+      "title": "Arrival Multiplier",
+      "default": 1.0
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "title": "AccessRow"
+   },
+   "AlertEpisode": {
+    "properties": {
+     "rule_id": {
+      "type": "string",
+      "title": "Rule Id"
+     },
+     "rule_text": {
+      "type": "string",
+      "title": "Rule Text"
+     },
+     "severity": {
+      "type": "string",
+      "title": "Severity"
+     },
+     "metric": {
+      "type": "string",
+      "title": "Metric"
+     },
+     "unit": {
+      "type": "string",
+      "title": "Unit"
+     },
+     "observed_peak": {
+      "type": "number",
+      "title": "Observed Peak"
+     },
+     "threshold": {
+      "type": "number",
+      "title": "Threshold"
+     },
+     "first_hour": {
+      "type": "integer",
+      "title": "First Hour"
+     },
+     "last_hour": {
+      "type": "integer",
+      "title": "Last Hour"
+     },
+     "duration_hours": {
+      "type": "integer",
+      "title": "Duration Hours"
+     },
+     "affected_variable": {
+      "type": "string",
+      "title": "Affected Variable"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "rule_id",
+     "rule_text",
+     "severity",
+     "metric",
+     "unit",
+     "observed_peak",
+     "threshold",
+     "first_hour",
+     "last_hour",
+     "duration_hours",
+     "affected_variable"
+    ],
+    "title": "AlertEpisode"
+   },
+   "AttributionEntry": {
+    "properties": {
+     "intervention": {
+      "type": "string",
+      "title": "Intervention"
+     },
+     "detail": {
+      "type": "object",
+      "title": "Detail"
+     },
+     "deltas": {
+      "additionalProperties": {
+       "anyOf": [
+        {
+         "$ref": "#/components/schemas/MetricDelta"
+        },
+        {
+         "additionalProperties": {
+          "$ref": "#/components/schemas/MetricDelta"
+         },
+         "type": "object"
+        }
+       ]
+      },
+      "type": "object",
+      "title": "Deltas"
+     },
+     "explanation": {
+      "type": "string",
+      "title": "Explanation"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "intervention",
+     "detail",
+     "deltas",
+     "explanation"
+    ],
+    "title": "AttributionEntry"
+   },
+   "BackupIn": {
+    "properties": {
+     "generator_availability_fraction": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Generator Availability Fraction",
+      "default": 1.0
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "BackupIn"
+   },
+   "Body_upload_profile_api_v1_hospital_upload_post": {
+    "properties": {
+     "file": {
+      "type": "string",
+      "format": "binary",
+      "title": "File"
+     }
+    },
+    "type": "object",
+    "required": [
+     "file"
+    ],
+    "title": "Body_upload_profile_api_v1_hospital_upload_post"
+   },
+   "ComparisonRequest": {
+    "properties": {
+     "scenario": {
+      "type": "string",
+      "enum": [
+       "normal_operations",
+       "heatwave_power_stress",
+       "heatwave_power_outage",
+       "flood_storm_access"
+      ],
+      "title": "Scenario"
+     },
+     "hospital_profile": {
+      "type": "string",
+      "maxLength": 64,
+      "title": "Hospital Profile",
+      "default": "demo"
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 1.0,
+      "title": "Duration Hours",
+      "default": 72
+     },
+     "weather": {
+      "$ref": "#/components/schemas/WeatherIn"
+     },
+     "stress": {
+      "$ref": "#/components/schemas/StressIn"
+     },
+     "outage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/OutageIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "access": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AccessIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "backup": {
+      "$ref": "#/components/schemas/BackupIn"
+     },
+     "interventions": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/InterventionsIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "stochastic": {
+      "type": "boolean",
+      "title": "Stochastic",
+      "default": false
+     },
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483647.0,
+      "minimum": 0.0,
+      "title": "Seed",
+      "default": 42
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "scenario"
+    ],
+    "title": "ComparisonRequest"
+   },
+   "ComparisonResponse": {
+    "properties": {
+     "model_version": {
+      "type": "string",
+      "title": "Model Version"
+     },
+     "input_hash": {
+      "type": "string",
+      "title": "Input Hash"
+     },
+     "seed": {
+      "type": "integer",
+      "title": "Seed"
+     },
+     "baseline": {
+      "$ref": "#/components/schemas/SimulationResponse"
+     },
+     "treatment": {
+      "$ref": "#/components/schemas/SimulationResponse"
+     },
+     "deltas": {
+      "type": "object",
+      "title": "Deltas"
+     },
+     "key_metric_deltas": {
+      "type": "object",
+      "title": "Key Metric Deltas"
+     },
+     "attribution": {
+      "items": {
+       "$ref": "#/components/schemas/AttributionEntry"
+      },
+      "type": "array",
+      "title": "Attribution"
+     },
+     "explanations": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Explanations"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "model_version",
+     "input_hash",
+     "seed",
+     "baseline",
+     "treatment",
+     "deltas",
+     "key_metric_deltas",
+     "attribution",
+     "explanations"
+    ],
+    "title": "ComparisonResponse"
+   },
+   "EnsembleRequest": {
+    "properties": {
+     "scenario": {
+      "type": "string",
+      "enum": [
+       "normal_operations",
+       "heatwave_power_stress",
+       "heatwave_power_outage",
+       "flood_storm_access"
+      ],
+      "title": "Scenario"
+     },
+     "hospital_profile": {
+      "type": "string",
+      "maxLength": 64,
+      "title": "Hospital Profile",
+      "default": "demo"
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 1.0,
+      "title": "Duration Hours",
+      "default": 72
+     },
+     "weather": {
+      "$ref": "#/components/schemas/WeatherIn"
+     },
+     "stress": {
+      "$ref": "#/components/schemas/StressIn"
+     },
+     "outage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/OutageIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "access": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AccessIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "backup": {
+      "$ref": "#/components/schemas/BackupIn"
+     },
+     "interventions": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/InterventionsIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "stochastic": {
+      "type": "boolean",
+      "title": "Stochastic",
+      "default": false
+     },
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483647.0,
+      "minimum": 0.0,
+      "title": "Seed",
+      "default": 42
+     },
+     "runs": {
+      "type": "integer",
+      "maximum": 200.0,
+      "minimum": 2.0,
+      "title": "Runs",
+      "default": 60
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "scenario"
+    ],
+    "title": "EnsembleRequest"
+   },
+   "FailurePoint": {
+    "properties": {
+     "rank": {
+      "type": "integer",
+      "title": "Rank"
+     },
+     "resource": {
+      "type": "string",
+      "title": "Resource"
+     },
+     "rule_id": {
+      "type": "string",
+      "title": "Rule Id"
+     },
+     "first_hour": {
+      "type": "integer",
+      "title": "First Hour"
+     },
+     "last_hour": {
+      "type": "integer",
+      "title": "Last Hour"
+     },
+     "peak_severity": {
+      "type": "string",
+      "title": "Peak Severity"
+     },
+     "margin_trace": {
+      "items": {
+       "$ref": "#/components/schemas/MarginPoint"
+      },
+      "type": "array",
+      "title": "Margin Trace"
+     },
+     "explanation": {
+      "type": "string",
+      "title": "Explanation"
+     },
+     "cascade_parent": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Cascade Parent"
+     },
+     "cascade_children": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Cascade Children",
+      "default": []
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "rank",
+     "resource",
+     "rule_id",
+     "first_hour",
+     "last_hour",
+     "peak_severity",
+     "margin_trace",
+     "explanation"
+    ],
+    "title": "FailurePoint"
+   },
+   "FirstFailure": {
+    "properties": {
+     "rule_id": {
+      "type": "string",
+      "title": "Rule Id"
+     },
+     "hour": {
+      "type": "integer",
+      "title": "Hour"
+     },
+     "resource": {
+      "type": "string",
+      "title": "Resource"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "rule_id",
+     "hour",
+     "resource"
+    ],
+    "title": "FirstFailure"
+   },
+   "HTTPValidationError": {
+    "properties": {
+     "detail": {
+      "items": {
+       "$ref": "#/components/schemas/ValidationError"
+      },
+      "type": "array",
+      "title": "Detail"
+     }
+    },
+    "type": "object",
+    "title": "HTTPValidationError"
+   },
+   "HourRow": {
+    "properties": {
+     "hour": {
+      "type": "integer",
+      "title": "Hour"
+     },
+     "temperature_c": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Temperature C"
+     },
+     "grid_fraction": {
+      "type": "number",
+      "title": "Grid Fraction"
+     },
+     "power": {
+      "$ref": "#/components/schemas/PowerRow"
+     },
+     "staffing": {
+      "additionalProperties": {
+       "$ref": "#/components/schemas/StaffingRow"
+      },
+      "type": "object",
+      "title": "Staffing"
+     },
+     "units": {
+      "additionalProperties": {
+       "$ref": "#/components/schemas/UnitRow"
+      },
+      "type": "object",
+      "title": "Units"
+     },
+     "supplies": {
+      "additionalProperties": {
+       "$ref": "#/components/schemas/SupplyRow"
+      },
+      "type": "object",
+      "title": "Supplies",
+      "default": {}
+     },
+     "access": {
+      "$ref": "#/components/schemas/AccessRow",
+      "default": {
+       "staff_access_fraction": 1.0,
+       "delivery_fraction": 1.0,
+       "arrival_multiplier": 1.0
+      }
+     },
+     "ed": {
+      "additionalProperties": {
+       "type": "integer"
+      },
+      "type": "object",
+      "title": "Ed"
+     },
+     "discharged": {
+      "type": "integer",
+      "title": "Discharged",
+      "default": 0
+     },
+     "binding_constraint": {
+      "type": "string",
+      "title": "Binding Constraint"
+     },
+     "margins": {
+      "anyOf": [
+       {
+        "additionalProperties": {
+         "type": "number"
+        },
+        "type": "object"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Margins"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "hour",
+     "grid_fraction",
+     "power",
+     "staffing",
+     "units",
+     "ed",
+     "binding_constraint"
+    ],
+    "title": "HourRow"
+   },
+   "InterventionsIn": {
+    "properties": {
+     "activate_surge_beds": {
+      "items": {
+       "$ref": "#/components/schemas/SurgeIn"
+      },
+      "type": "array",
+      "title": "Activate Surge Beds"
+     },
+     "reallocate_staff": {
+      "items": {
+       "$ref": "#/components/schemas/StaffMoveIn"
+      },
+      "type": "array",
+      "title": "Reallocate Staff"
+     },
+     "reduce_noncritical_load_kw": {
+      "items": {
+       "$ref": "#/components/schemas/ShedIn"
+      },
+      "type": "array",
+      "title": "Reduce Noncritical Load Kw"
+     },
+     "recall_staff": {
+      "items": {
+       "$ref": "#/components/schemas/RecallIn"
+      },
+      "type": "array",
+      "title": "Recall Staff"
+     },
+     "emergency_resupply": {
+      "items": {
+       "$ref": "#/components/schemas/ResupplyIn"
+      },
+      "type": "array",
+      "title": "Emergency Resupply"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "InterventionsIn"
+   },
+   "MarginPoint": {
+    "properties": {
+     "hour": {
+      "type": "integer",
+      "title": "Hour"
+     },
+     "margin": {
+      "type": "number",
+      "title": "Margin"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "hour",
+     "margin"
+    ],
+    "title": "MarginPoint"
+   },
+   "MetricDelta": {
+    "properties": {
+     "absolute": {
+      "type": "number",
+      "title": "Absolute"
+     },
+     "relative": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Relative"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "absolute"
+    ],
+    "title": "MetricDelta"
+   },
+   "OutageIn": {
+    "properties": {
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour",
+      "default": 24
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 0.0,
+      "title": "Duration Hours",
+      "default": 36
+     },
+     "grid_fraction": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Grid Fraction",
+      "default": 0.0
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "OutageIn"
+   },
+   "PlanRequest": {
+    "properties": {
+     "scenario": {
+      "type": "string",
+      "enum": [
+       "normal_operations",
+       "heatwave_power_stress",
+       "heatwave_power_outage",
+       "flood_storm_access"
+      ],
+      "title": "Scenario"
+     },
+     "hospital_profile": {
+      "type": "string",
+      "maxLength": 64,
+      "title": "Hospital Profile",
+      "default": "demo"
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 1.0,
+      "title": "Duration Hours",
+      "default": 72
+     },
+     "weather": {
+      "$ref": "#/components/schemas/WeatherIn"
+     },
+     "stress": {
+      "$ref": "#/components/schemas/StressIn"
+     },
+     "outage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/OutageIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "access": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AccessIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "backup": {
+      "$ref": "#/components/schemas/BackupIn"
+     },
+     "interventions": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/InterventionsIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "stochastic": {
+      "type": "boolean",
+      "title": "Stochastic",
+      "default": false
+     },
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483647.0,
+      "minimum": 0.0,
+      "title": "Seed",
+      "default": 42
+     },
+     "objective": {
+      "$ref": "#/components/schemas/PlannerObjectiveIn"
+     },
+     "budget": {
+      "$ref": "#/components/schemas/PlannerBudgetIn"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "scenario"
+    ],
+    "title": "PlanRequest"
+   },
+   "PlanResponse": {
+    "properties": {
+     "model_version": {
+      "type": "string",
+      "title": "Model Version"
+     },
+     "input_hash": {
+      "type": "string",
+      "title": "Input Hash"
+     },
+     "seed": {
+      "type": "integer",
+      "title": "Seed"
+     },
+     "label": {
+      "type": "string",
+      "title": "Label"
+     },
+     "action_plan": {
+      "items": {
+       "$ref": "#/components/schemas/PlanStep"
+      },
+      "type": "array",
+      "title": "Action Plan"
+     },
+     "score": {
+      "type": "object",
+      "title": "Score"
+     },
+     "references": {
+      "items": {
+       "$ref": "#/components/schemas/ReferencePlan"
+      },
+      "type": "array",
+      "title": "References"
+     },
+     "search_stats": {
+      "type": "object",
+      "title": "Search Stats"
+     },
+     "failure_points_before": {
+      "items": {
+       "$ref": "#/components/schemas/FailurePoint"
+      },
+      "type": "array",
+      "title": "Failure Points Before"
+     },
+     "failure_points_after": {
+      "items": {
+       "$ref": "#/components/schemas/FailurePoint"
+      },
+      "type": "array",
+      "title": "Failure Points After"
+     },
+     "assumptions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Assumptions"
+     },
+     "provenance": {
+      "$ref": "#/components/schemas/Provenance"
+     },
+     "limitations": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Limitations"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "model_version",
+     "input_hash",
+     "seed",
+     "label",
+     "action_plan",
+     "score",
+     "references",
+     "search_stats",
+     "failure_points_before",
+     "failure_points_after",
+     "assumptions",
+     "provenance",
+     "limitations"
+    ],
+    "title": "PlanResponse"
+   },
+   "PlanStep": {
+    "properties": {
+     "action": {
+      "type": "string",
+      "title": "Action"
+     },
+     "detail": {
+      "type": "object",
+      "title": "Detail"
+     },
+     "start_hour": {
+      "type": "integer",
+      "title": "Start Hour"
+     },
+     "effective_hour": {
+      "type": "integer",
+      "title": "Effective Hour"
+     },
+     "marginal_gain_resilience": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Marginal Gain Resilience"
+     },
+     "resilience_index": {
+      "type": "number",
+      "title": "Resilience Index"
+     },
+     "reason": {
+      "type": "string",
+      "title": "Reason"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "action",
+     "detail",
+     "start_hour",
+     "effective_hour",
+     "marginal_gain_resilience",
+     "resilience_index",
+     "reason"
+    ],
+    "title": "PlanStep"
+   },
+   "PlannerBudgetIn": {
+    "properties": {
+     "max_simulations": {
+      "type": "integer",
+      "maximum": 5000.0,
+      "minimum": 10.0,
+      "title": "Max Simulations",
+      "default": 600
+     },
+     "max_seconds": {
+      "type": "number",
+      "maximum": 60.0,
+      "minimum": 0.5,
+      "title": "Max Seconds",
+      "default": 5.0
+     },
+     "max_actions": {
+      "type": "integer",
+      "maximum": 10.0,
+      "minimum": 1.0,
+      "title": "Max Actions",
+      "default": 5
+     },
+     "grid_hours": {
+      "type": "integer",
+      "maximum": 24.0,
+      "minimum": 1.0,
+      "title": "Grid Hours",
+      "default": 3
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "PlannerBudgetIn"
+   },
+   "PlannerObjectiveIn": {
+    "properties": {
+     "lambda_burden": {
+      "type": "number",
+      "maximum": 10.0,
+      "minimum": 0.0,
+      "title": "Lambda Burden",
+      "default": 0.5
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "PlannerObjectiveIn"
+   },
+   "PowerRow": {
+    "properties": {
+     "demand_kw": {
+      "type": "number",
+      "title": "Demand Kw"
+     },
+     "grid_supply_kw": {
+      "type": "number",
+      "title": "Grid Supply Kw"
+     },
+     "gen_output_kw": {
+      "type": "number",
+      "title": "Gen Output Kw"
+     },
+     "available_supply_kw": {
+      "type": "number",
+      "title": "Available Supply Kw"
+     },
+     "deficit_kw": {
+      "type": "number",
+      "title": "Deficit Kw"
+     },
+     "reserve_kw": {
+      "type": "number",
+      "title": "Reserve Kw"
+     },
+     "critical_at_risk_kw": {
+      "type": "number",
+      "title": "Critical At Risk Kw"
+     },
+     "critical_demand_kw": {
+      "type": "number",
+      "title": "Critical Demand Kw"
+     },
+     "shed_kw": {
+      "type": "number",
+      "title": "Shed Kw"
+     },
+     "fuel_l": {
+      "type": "number",
+      "title": "Fuel L"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "demand_kw",
+     "grid_supply_kw",
+     "gen_output_kw",
+     "available_supply_kw",
+     "deficit_kw",
+     "reserve_kw",
+     "critical_at_risk_kw",
+     "critical_demand_kw",
+     "shed_kw",
+     "fuel_l"
+    ],
+    "title": "PowerRow"
+   },
+   "Provenance": {
+    "properties": {
+     "hospital_data": {
+      "type": "string",
+      "title": "Hospital Data",
+      "default": "SYNTHETIC"
+     },
+     "weather": {
+      "type": "string",
+      "title": "Weather",
+      "default": "SYNTHETIC_PROFILE"
+     },
+     "outputs": {
+      "type": "string",
+      "title": "Outputs",
+      "default": "CALCULATED"
+     },
+     "model_version": {
+      "type": "string",
+      "title": "Model Version"
+     },
+     "warnings": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Warnings",
+      "default": []
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "model_version"
+    ],
+    "title": "Provenance"
+   },
+   "RecallIn": {
+    "properties": {
+     "unit": {
+      "type": "string",
+      "enum": [
+       "ed",
+       "ward",
+       "icu"
+      ],
+      "title": "Unit"
+     },
+     "nurses": {
+      "type": "integer",
+      "maximum": 1000.0,
+      "minimum": 0.0,
+      "title": "Nurses"
+     },
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "unit",
+     "nurses",
+     "start_hour"
+    ],
+    "title": "RecallIn"
+   },
+   "ReferencePlan": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "resilience_index": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Resilience Index"
+     },
+     "actions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Actions"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "name",
+     "resilience_index",
+     "actions"
+    ],
+    "title": "ReferencePlan"
+   },
+   "ResupplyIn": {
+    "properties": {
+     "fuel_l": {
+      "type": "number",
+      "maximum": 100000.0,
+      "minimum": 0.0,
+      "title": "Fuel L",
+      "default": 0.0
+     },
+     "items": {
+      "additionalProperties": {
+       "type": "number"
+      },
+      "type": "object",
+      "title": "Items"
+     },
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour",
+      "default": 0
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "ResupplyIn"
+   },
+   "ScenarioInfo": {
+    "properties": {
+     "model_version": {
+      "type": "string",
+      "title": "Model Version"
+     },
+     "presets": {
+      "type": "object",
+      "title": "Presets"
+     },
+     "ranges": {
+      "type": "object",
+      "title": "Ranges"
+     },
+     "assumptions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Assumptions"
+     },
+     "limitations": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Limitations"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "model_version",
+     "presets",
+     "ranges",
+     "assumptions",
+     "limitations"
+    ],
+    "title": "ScenarioInfo"
+   },
+   "SensitivityRequest": {
+    "properties": {
+     "scenario": {
+      "type": "string",
+      "enum": [
+       "normal_operations",
+       "heatwave_power_stress",
+       "heatwave_power_outage",
+       "flood_storm_access"
+      ],
+      "title": "Scenario"
+     },
+     "hospital_profile": {
+      "type": "string",
+      "maxLength": 64,
+      "title": "Hospital Profile",
+      "default": "demo"
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 1.0,
+      "title": "Duration Hours",
+      "default": 72
+     },
+     "weather": {
+      "$ref": "#/components/schemas/WeatherIn"
+     },
+     "stress": {
+      "$ref": "#/components/schemas/StressIn"
+     },
+     "outage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/OutageIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "access": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AccessIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "backup": {
+      "$ref": "#/components/schemas/BackupIn"
+     },
+     "interventions": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/InterventionsIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "stochastic": {
+      "type": "boolean",
+      "title": "Stochastic",
+      "default": false
+     },
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483647.0,
+      "minimum": 0.0,
+      "title": "Seed",
+      "default": 42
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "scenario"
+    ],
+    "title": "SensitivityRequest"
+   },
+   "ShedIn": {
+    "properties": {
+     "kw": {
+      "type": "number",
+      "maximum": 10000.0,
+      "minimum": 0.0,
+      "title": "Kw"
+     },
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour"
+     },
+     "end_hour": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 0.0,
+      "title": "End Hour"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "kw",
+     "start_hour",
+     "end_hour"
+    ],
+    "title": "ShedIn"
+   },
+   "SimulationRequest": {
+    "properties": {
+     "scenario": {
+      "type": "string",
+      "enum": [
+       "normal_operations",
+       "heatwave_power_stress",
+       "heatwave_power_outage",
+       "flood_storm_access"
+      ],
+      "title": "Scenario"
+     },
+     "hospital_profile": {
+      "type": "string",
+      "maxLength": 64,
+      "title": "Hospital Profile",
+      "default": "demo"
+     },
+     "duration_hours": {
+      "type": "integer",
+      "maximum": 72.0,
+      "minimum": 1.0,
+      "title": "Duration Hours",
+      "default": 72
+     },
+     "weather": {
+      "$ref": "#/components/schemas/WeatherIn"
+     },
+     "stress": {
+      "$ref": "#/components/schemas/StressIn"
+     },
+     "outage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/OutageIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "access": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/AccessIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "backup": {
+      "$ref": "#/components/schemas/BackupIn"
+     },
+     "interventions": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/InterventionsIn"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "stochastic": {
+      "type": "boolean",
+      "title": "Stochastic",
+      "default": false
+     },
+     "seed": {
+      "type": "integer",
+      "maximum": 2147483647.0,
+      "minimum": 0.0,
+      "title": "Seed",
+      "default": 42
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "scenario"
+    ],
+    "title": "SimulationRequest"
+   },
+   "SimulationResponse": {
+    "properties": {
+     "run_id": {
+      "type": "string",
+      "title": "Run Id"
+     },
+     "model_version": {
+      "type": "string",
+      "title": "Model Version"
+     },
+     "input_hash": {
+      "type": "string",
+      "title": "Input Hash"
+     },
+     "seed": {
+      "type": "integer",
+      "title": "Seed"
+     },
+     "stochastic": {
+      "type": "boolean",
+      "title": "Stochastic"
+     },
+     "summary": {
+      "$ref": "#/components/schemas/Summary"
+     },
+     "series": {
+      "items": {
+       "$ref": "#/components/schemas/HourRow"
+      },
+      "type": "array",
+      "title": "Series"
+     },
+     "alerts": {
+      "items": {
+       "$ref": "#/components/schemas/AlertEpisode"
+      },
+      "type": "array",
+      "title": "Alerts"
+     },
+     "failure_points": {
+      "items": {
+       "$ref": "#/components/schemas/FailurePoint"
+      },
+      "type": "array",
+      "title": "Failure Points"
+     },
+     "assumptions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Assumptions"
+     },
+     "provenance": {
+      "$ref": "#/components/schemas/Provenance"
+     },
+     "limitations": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Limitations"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "run_id",
+     "model_version",
+     "input_hash",
+     "seed",
+     "stochastic",
+     "summary",
+     "series",
+     "alerts",
+     "failure_points",
+     "assumptions",
+     "provenance",
+     "limitations"
+    ],
+    "title": "SimulationResponse"
+   },
+   "StaffMoveIn": {
+    "properties": {
+     "from_unit": {
+      "type": "string",
+      "enum": [
+       "ed",
+       "ward",
+       "icu"
+      ],
+      "title": "From Unit"
+     },
+     "to_unit": {
+      "type": "string",
+      "enum": [
+       "ed",
+       "ward",
+       "icu"
+      ],
+      "title": "To Unit"
+     },
+     "nurses": {
+      "type": "integer",
+      "maximum": 1000.0,
+      "minimum": 0.0,
+      "title": "Nurses"
+     },
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "from_unit",
+     "to_unit",
+     "nurses",
+     "start_hour"
+    ],
+    "title": "StaffMoveIn"
+   },
+   "StaffingRow": {
+    "properties": {
+     "available": {
+      "type": "integer",
+      "title": "Available"
+     },
+     "staffed_capacity": {
+      "type": "integer",
+      "title": "Staffed Capacity"
+     },
+     "required": {
+      "type": "integer",
+      "title": "Required"
+     },
+     "shortfall": {
+      "type": "integer",
+      "title": "Shortfall"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "available",
+     "staffed_capacity",
+     "required",
+     "shortfall"
+    ],
+    "title": "StaffingRow"
+   },
+   "StressIn": {
+    "properties": {
+     "arrival_multiplier": {
+      "type": "number",
+      "maximum": 3.0,
+      "minimum": 0.0,
+      "title": "Arrival Multiplier",
+      "default": 1.25
+     },
+     "los_multiplier": {
+      "type": "number",
+      "maximum": 2.0,
+      "minimum": 0.5,
+      "title": "Los Multiplier",
+      "default": 1.0
+     },
+     "staff_availability_fraction": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Staff Availability Fraction",
+      "default": 0.9
+     },
+     "power_supply_fraction": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Power Supply Fraction",
+      "default": 0.8
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "StressIn"
+   },
+   "Summary": {
+    "properties": {
+     "peak_ward_occupancy_pct": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Peak Ward Occupancy Pct"
+     },
+     "peak_icu_occupancy_pct": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Peak Icu Occupancy Pct"
+     },
+     "peak_ed_occupancy_pct": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Peak Ed Occupancy Pct"
+     },
+     "hours_ward_above_threshold": {
+      "type": "integer",
+      "title": "Hours Ward Above Threshold"
+     },
+     "hours_icu_above_threshold": {
+      "type": "integer",
+      "title": "Hours Icu Above Threshold"
+     },
+     "peak_ed_waiting": {
+      "type": "integer",
+      "title": "Peak Ed Waiting"
+     },
+     "peak_ed_boarding": {
+      "type": "integer",
+      "title": "Peak Ed Boarding"
+     },
+     "overflow_patient_hours": {
+      "type": "integer",
+      "title": "Overflow Patient Hours"
+     },
+     "staff_shortfall_nurse_hours": {
+      "type": "integer",
+      "title": "Staff Shortfall Nurse Hours"
+     },
+     "hours_beds_over_usable": {
+      "type": "integer",
+      "title": "Hours Beds Over Usable"
+     },
+     "peak_power_demand_kw": {
+      "type": "number",
+      "title": "Peak Power Demand Kw"
+     },
+     "hours_power_deficit": {
+      "type": "integer",
+      "title": "Hours Power Deficit"
+     },
+     "peak_power_deficit_kw": {
+      "type": "number",
+      "title": "Peak Power Deficit Kw"
+     },
+     "energy_unserved_kwh": {
+      "type": "number",
+      "title": "Energy Unserved Kwh"
+     },
+     "min_power_reserve_kw": {
+      "type": "number",
+      "title": "Min Power Reserve Kw"
+     },
+     "hours_critical_load_at_risk": {
+      "type": "integer",
+      "title": "Hours Critical Load At Risk"
+     },
+     "fuel_remaining_l": {
+      "type": "number",
+      "title": "Fuel Remaining L"
+     },
+     "hours_to_fuel_exhaustion": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Hours To Fuel Exhaustion"
+     },
+     "resilience_index": {
+      "type": "number",
+      "title": "Resilience Index"
+     },
+     "first_failure": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/FirstFailure"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "time_to_first_failure_hours": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Time To First Failure Hours"
+     },
+     "root_failures": {
+      "type": "integer",
+      "title": "Root Failures",
+      "default": 0
+     },
+     "cascade_children": {
+      "type": "integer",
+      "title": "Cascade Children",
+      "default": 0
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "hours_ward_above_threshold",
+     "hours_icu_above_threshold",
+     "peak_ed_waiting",
+     "peak_ed_boarding",
+     "overflow_patient_hours",
+     "staff_shortfall_nurse_hours",
+     "hours_beds_over_usable",
+     "peak_power_demand_kw",
+     "hours_power_deficit",
+     "peak_power_deficit_kw",
+     "energy_unserved_kwh",
+     "min_power_reserve_kw",
+     "hours_critical_load_at_risk",
+     "fuel_remaining_l",
+     "resilience_index"
+    ],
+    "title": "Summary"
+   },
+   "SupplyRow": {
+    "properties": {
+     "stock": {
+      "type": "number",
+      "title": "Stock"
+     },
+     "delivered": {
+      "type": "number",
+      "title": "Delivered"
+     },
+     "consumption": {
+      "type": "number",
+      "title": "Consumption"
+     },
+     "unmet": {
+      "type": "number",
+      "title": "Unmet",
+      "default": 0.0
+     },
+     "cover_hours": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Cover Hours"
+     },
+     "stockout": {
+      "type": "boolean",
+      "title": "Stockout",
+      "default": false
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "stock",
+     "delivered",
+     "consumption"
+    ],
+    "title": "SupplyRow"
+   },
+   "SurgeIn": {
+    "properties": {
+     "unit": {
+      "type": "string",
+      "enum": [
+       "ed",
+       "ward",
+       "icu"
+      ],
+      "title": "Unit"
+     },
+     "beds": {
+      "type": "integer",
+      "maximum": 1000.0,
+      "minimum": 0.0,
+      "title": "Beds"
+     },
+     "start_hour": {
+      "type": "integer",
+      "maximum": 71.0,
+      "minimum": 0.0,
+      "title": "Start Hour"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "unit",
+     "beds",
+     "start_hour"
+    ],
+    "title": "SurgeIn"
+   },
+   "UnitRow": {
+    "properties": {
+     "open_beds": {
+      "type": "integer",
+      "title": "Open Beds"
+     },
+     "usable_beds": {
+      "type": "integer",
+      "title": "Usable Beds"
+     },
+     "occupied": {
+      "type": "integer",
+      "title": "Occupied"
+     },
+     "available_beds": {
+      "type": "integer",
+      "title": "Available Beds"
+     },
+     "occupancy_pct": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Occupancy Pct"
+     },
+     "beds_over_usable": {
+      "type": "integer",
+      "title": "Beds Over Usable"
+     },
+     "status": {
+      "type": "string",
+      "title": "Status"
+     }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+     "open_beds",
+     "usable_beds",
+     "occupied",
+     "available_beds",
+     "occupancy_pct",
+     "beds_over_usable",
+     "status"
+    ],
+    "title": "UnitRow"
+   },
+   "UploadResult": {
+    "properties": {
+     "profile_id": {
+      "type": "string",
+      "title": "Profile Id"
+     },
+     "hospital_name": {
+      "type": "string",
+      "title": "Hospital Name"
+     },
+     "beds_total": {
+      "type": "integer",
+      "title": "Beds Total"
+     },
+     "warnings": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Warnings",
+      "default": []
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "profile_id",
+     "hospital_name",
+     "beds_total"
+    ],
+    "title": "UploadResult"
+   },
+   "ValidationError": {
+    "properties": {
+     "loc": {
+      "items": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "integer"
+        }
+       ]
+      },
+      "type": "array",
+      "title": "Location"
+     },
+     "msg": {
+      "type": "string",
+      "title": "Message"
+     },
+     "type": {
+      "type": "string",
+      "title": "Error Type"
+     }
+    },
+    "type": "object",
+    "required": [
+     "loc",
+     "msg",
+     "type"
+    ],
+    "title": "ValidationError"
+   },
+   "WeatherIn": {
+    "properties": {
+     "mode": {
+      "type": "string",
+      "const": "synthetic_profile",
+      "title": "Mode",
+      "default": "synthetic_profile"
+     },
+     "max_temperature_c": {
+      "type": "number",
+      "maximum": 55.0,
+      "minimum": -10.0,
+      "title": "Max Temperature C",
+      "default": 41
+     },
+     "min_temperature_c": {
+      "anyOf": [
+       {
+        "type": "number",
+        "maximum": 55.0,
+        "minimum": -10.0
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Min Temperature C"
+     },
+     "humidity_pct": {
+      "type": "number",
+      "maximum": 100.0,
+      "minimum": 0.0,
+      "title": "Humidity Pct",
+      "default": 55
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "WeatherIn"
+   }
+  }
+ }
+}
