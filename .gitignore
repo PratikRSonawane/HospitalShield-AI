@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+frontend/node_modules/
+frontend/dist/
+data/hospitals/
+data/run_history.sqlite3*
+data/weather_cache.sqlite3*
+data/reference/
+*.log
+screenshots/
+.zcodeignore
+
+# editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# local runtime artifacts
+backend/.mypy_cache/
+backend/.ruff_cache/
