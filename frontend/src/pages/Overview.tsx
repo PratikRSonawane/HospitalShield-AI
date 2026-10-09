@@ -91,10 +91,17 @@ export function OverviewPage() {
 
       <div className="space-y-4">
         {!result && !run.loading && (
-          <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center">
-            <p className="text-sm text-mist-400">Run a scenario to see the calculated operational impact.</p>
-            <p className="mt-1 text-xs text-mist-600">Everything you will see is computed by the backend engine — nothing is hard-coded here.</p>
-          </div>
+          <section className="flex min-h-80 flex-col items-center justify-center gap-5 rounded-2xl border border-ink-700 bg-ink-900 px-6 py-12 text-center">
+            <span aria-hidden="true" className="grid size-14 place-items-center rounded-2xl border border-teal-400/20 bg-teal-400/10 text-xl font-medium text-teal-400">01</span>
+            <div className="flex max-w-sm flex-col gap-2">
+              <h2 className="text-xl font-semibold text-mist-100">Your next insight starts here</h2>
+              <p className="text-sm leading-6 text-mist-400">Choose a disruption and adjust your scenario settings. Run the simulation to reveal capacity pressures and the resources that need attention.</p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2 text-xs text-mist-300">
+              {['Capacity impact', 'Resource risks', 'Response priorities'].map((label) => <span key={label} className="rounded-full border border-ink-700 px-3 py-1.5">{label}</span>)}
+            </div>
+            <p className="text-xs text-mist-500">Results are calculated by the simulation engine.</p>
+          </section>
         )}
         {run.loading && <div className="h-40 animate-pulse rounded-lg bg-ink-800" role="status" aria-label="Running simulation" />}
 

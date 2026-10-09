@@ -28,6 +28,32 @@ body {
   @apply bg-ink-950 text-mist-200 font-sans antialiased;
 }
 
+@layer base {
+  body { margin: 0; }
+  button, a, input, select, summary { -webkit-tap-highlight-color: transparent; }
+  button:not(:disabled), select:not(:disabled), summary { cursor: pointer; }
+  button, a, input, select { transition: background-color 150ms, border-color 150ms, color 150ms; }
+  :focus-visible { outline: 2px solid var(--color-teal-400); outline-offset: 4px; }
+  button:disabled { cursor: not-allowed; opacity: 0.5; }
+  input, select { accent-color: var(--color-teal-400); }
+  h1, h2, h3 { text-wrap: balance; letter-spacing: -0.025em; }
+  p { text-wrap: pretty; }
+  th { font-weight: 500; }
+  td, th { font-variant-numeric: tabular-nums; }
+  ::selection { background: #2dd4bf30; color: var(--color-mist-100); }
+  * { scrollbar-width: thin; scrollbar-color: var(--color-ink-600) transparent; }
+}
+
+@layer components {
+  main .rounded-lg.border { border-radius: 0.875rem; }
+  main input:not([type='range']):not([type='checkbox']), main select {
+    min-height: 2.5rem;
+    border-radius: 0.5rem;
+  }
+  main button { min-height: 2rem; }
+  main .bg-ink-850 { box-shadow: 0 2px 6px #0000000d; }
+}
+
 /* status colors also carry an icon + text everywhere (never colour alone) */
 .status-ok { @apply text-teal-400; }
 .status-warn { @apply text-amber-400; }
