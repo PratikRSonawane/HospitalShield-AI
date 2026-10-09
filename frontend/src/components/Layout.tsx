@@ -58,7 +58,7 @@ export function Layout() {
       <OfflineBanner />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-teal-400 focus:px-4 focus:py-2 focus:text-ink-950">Skip to content</a>
       <header className="no-print sticky top-0 z-40 border-b border-ink-700/80 bg-ink-900/95 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-5 gap-y-3 px-4 py-3 lg:px-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3.5 lg:px-6">
           <NavLink to="/" className="group flex shrink-0 items-center gap-2.5" aria-label="HospitalShield AI overview">
             <span aria-hidden className="grid size-8 place-items-center rounded-xl border border-teal-400/30 bg-teal-400/10 text-sm font-bold text-teal-400 shadow-inner shadow-teal-400/10 transition-colors group-hover:border-teal-400/60 group-hover:bg-teal-400/15">HS</span>
             <span className="leading-none">

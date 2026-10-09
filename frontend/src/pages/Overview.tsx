@@ -54,7 +54,7 @@ export function OverviewPage() {
         </div>
       </section>
 
-      <div className="grid gap-5 lg:grid-cols-[320px_1fr]">
+      <div className="grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
       <div className="space-y-4">
         <div className="flex items-center justify-between px-1">
           <div>

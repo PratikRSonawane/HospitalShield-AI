@@ -26,6 +26,7 @@ html {
 
 body {
   @apply bg-ink-950 text-mist-200 font-sans antialiased;
+  background-image: radial-gradient(circle at 50% -10%, #1d38511f, transparent 34rem);
 }
 
 @layer base {
