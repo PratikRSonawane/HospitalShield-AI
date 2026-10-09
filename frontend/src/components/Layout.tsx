@@ -56,27 +56,34 @@ export function Layout() {
   return (
     <div className="min-h-screen">
       <OfflineBanner />
-      <header className="no-print sticky top-0 z-40 border-b border-ink-700 bg-ink-900/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3">
-          <NavLink to="/" className="flex items-center gap-2">
-            <span aria-hidden className="text-xl">🛡️</span>
-            <span className="font-semibold tracking-tight text-mist-200">HospitalShield AI</span>
+      <header className="no-print sticky top-0 z-40 border-b border-ink-700/80 bg-ink-900/95 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-5 gap-y-3 px-4 py-3 lg:px-6">
+          <NavLink to="/" className="group flex shrink-0 items-center gap-2.5" aria-label="HospitalShield AI overview">
+            <span aria-hidden className="grid size-8 place-items-center rounded-xl border border-teal-400/30 bg-teal-400/10 text-sm font-bold text-teal-400 shadow-inner shadow-teal-400/10 transition-colors group-hover:border-teal-400/60 group-hover:bg-teal-400/15">HS</span>
+            <span className="leading-none">
+              <span className="block text-sm font-semibold tracking-tight text-mist-100">HospitalShield</span>
+              <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.18em] text-mist-500">Resilience intelligence</span>
+            </span>
           </NavLink>
-          <nav aria-label="Main" className="ml-4 hidden gap-1 md:flex">
+
+          <nav aria-label="Main" className="order-3 flex w-full gap-1 overflow-x-auto border-t border-ink-800 pt-2 scrollbar-none lg:order-none lg:w-auto lg:border-t-0 lg:pt-0">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `rounded px-3 py-1.5 text-sm ${isActive ? 'bg-ink-700 text-mist-200' : 'text-mist-400 hover:bg-ink-800 hover:text-mist-200'}`}
+                  `relative shrink-0 rounded-lg px-3 py-2 text-xs font-medium transition-colors after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:rounded-full after:bg-teal-400 after:transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400/70 ${isActive ? 'bg-ink-800 text-mist-100 after:opacity-100' : 'text-mist-400 after:opacity-0 hover:bg-ink-850 hover:text-mist-200'}`}
               >
                 {item.label}
               </NavLink>
             ))}
           </nav>
-          <div className="ml-auto flex items-center gap-2">
-            <ProvenanceBadge kind="SYNTHETIC" />
-            <ProvenanceBadge kind="CALCULATED" />
+
+          <div className="ml-auto flex items-center gap-1.5">
+            <div className="hidden items-center gap-1.5 sm:flex">
+              <ProvenanceBadge kind="SYNTHETIC" />
+              <ProvenanceBadge kind="CALCULATED" />
+            </div>
             <DemoMode />
           </div>
         </div>
