@@ -1,0 +1,198 @@
+{
+  "model_note": "Presets are SCENARIO ASSUMPTIONS on a SYNTHETIC hospital. Multipliers are planning assumptions, not empirical relationships.",
+  "presets": {
+    "normal_operations": {
+      "description": "Control scenario: baseline arrivals, full grid, mild summer day.",
+      "scenario": "normal_operations",
+      "duration_hours": 72,
+      "weather": {
+        "mode": "synthetic_profile",
+        "max_temperature_c": 30,
+        "min_temperature_c": 20,
+        "humidity_pct": 55
+      },
+      "stress": {
+        "arrival_multiplier": 1.0,
+        "los_multiplier": 1.0,
+        "staff_availability_fraction": 1.0,
+        "power_supply_fraction": 1.0
+      },
+      "outage": null,
+      "access": null,
+      "backup": {
+        "generator_availability_fraction": 1.0
+      }
+    },
+    "heatwave_power_stress": {
+      "description": "Heatwave with a derated grid: +25% arrivals, +20% length of stay, 10% staff absent, grid at 80%. No full outage.",
+      "scenario": "heatwave_power_stress",
+      "duration_hours": 72,
+      "weather": {
+        "mode": "synthetic_profile",
+        "max_temperature_c": 41,
+        "min_temperature_c": 29,
+        "humidity_pct": 55
+      },
+      "stress": {
+        "arrival_multiplier": 1.15,
+        "los_multiplier": 1.5,
+        "staff_availability_fraction": 0.9,
+        "power_supply_fraction": 0.8
+      },
+      "outage": null,
+      "access": null,
+      "backup": {
+        "generator_availability_fraction": 1.0
+      }
+    },
+    "heatwave_power_outage": {
+      "description": "Heatwave plus a 36-hour grid outage starting at hour 24; generator and fuel become binding.",
+      "scenario": "heatwave_power_outage",
+      "duration_hours": 72,
+      "weather": {
+        "mode": "synthetic_profile",
+        "max_temperature_c": 43,
+        "min_temperature_c": 30,
+        "humidity_pct": 55
+      },
+      "stress": {
+        "arrival_multiplier": 1.15,
+        "los_multiplier": 1.5,
+        "staff_availability_fraction": 0.9,
+        "power_supply_fraction": 0.8
+      },
+      "outage": {
+        "start_hour": 24,
+        "duration_hours": 36,
+        "grid_fraction": 0.0
+      },
+      "access": null,
+      "backup": {
+        "generator_availability_fraction": 1.0
+      }
+    },
+    "flood_storm_access": {
+      "description": "Storm and flooding from hour 18 for 24 hours: 60% staff can reach work, deliveries at 15%, +40% arrivals, generator plant derated to 60%. Forecast warning allows pre-positioning.",
+      "scenario": "flood_storm_access",
+      "duration_hours": 72,
+      "weather": {
+        "mode": "synthetic_profile",
+        "max_temperature_c": 30,
+        "min_temperature_c": 22,
+        "humidity_pct": 90
+      },
+      "stress": {
+        "arrival_multiplier": 1.0,
+        "los_multiplier": 1.0,
+        "staff_availability_fraction": 0.95,
+        "power_supply_fraction": 0.9
+      },
+      "outage": null,
+      "access": {
+        "start_hour": 18,
+        "duration_hours": 24,
+        "staff_access_fraction": 0.6,
+        "delivery_fraction": 0.15,
+        "arrival_multiplier": 1.4
+      },
+      "backup": {
+        "generator_availability_fraction": 0.6
+      }
+    }
+  },
+  "ranges": {
+    "duration_hours": {
+      "min": 1,
+      "max": 72,
+      "default": 72
+    },
+    "max_temperature_c": {
+      "min": -10,
+      "max": 55,
+      "default": 41
+    },
+    "min_temperature_c": {
+      "min": -10,
+      "max": 55,
+      "default": null
+    },
+    "humidity_pct": {
+      "min": 0,
+      "max": 100,
+      "default": 55
+    },
+    "stress.arrival_multiplier": {
+      "min": 0,
+      "max": 3,
+      "default": 1.25
+    },
+    "stress.los_multiplier": {
+      "min": 0.5,
+      "max": 2,
+      "default": 1.0
+    },
+    "stress.staff_availability_fraction": {
+      "min": 0,
+      "max": 1,
+      "default": 0.9
+    },
+    "stress.power_supply_fraction": {
+      "min": 0,
+      "max": 1,
+      "default": 0.8
+    },
+    "outage.start_hour": {
+      "min": 0,
+      "max": 71,
+      "default": 24
+    },
+    "outage.duration_hours": {
+      "min": 0,
+      "max": 72,
+      "default": 36
+    },
+    "outage.grid_fraction": {
+      "min": 0,
+      "max": 1,
+      "default": 0.0
+    },
+    "access.start_hour": {
+      "min": 0,
+      "max": 71,
+      "default": 18
+    },
+    "access.duration_hours": {
+      "min": 0,
+      "max": 72,
+      "default": 24
+    },
+    "access.staff_access_fraction": {
+      "min": 0,
+      "max": 1,
+      "default": 0.6
+    },
+    "access.delivery_fraction": {
+      "min": 0,
+      "max": 1,
+      "default": 0.25
+    },
+    "access.arrival_multiplier": {
+      "min": 0,
+      "max": 3,
+      "default": 1.4
+    },
+    "backup.generator_availability_fraction": {
+      "min": 0,
+      "max": 1,
+      "default": 1.0
+    },
+    "seed": {
+      "min": 0,
+      "max": 2147483647,
+      "default": 42
+    },
+    "stochastic": {
+      "default": false
+    }
+  }
+}

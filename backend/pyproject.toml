@@ -1,0 +1,22 @@
+[project]
+name = "hospitalshield-backend"
+version = "1.0.0"
+description = "HospitalShield AI - climate-resilient hospital digital twin (HC-03)"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["app/simulation"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
