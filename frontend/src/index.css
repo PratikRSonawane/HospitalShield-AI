@@ -16,6 +16,8 @@
   --color-rose-400: #fb7185;
   --color-violet-400: #a78bfa;
   --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --color-mist-100: #eef2f8;
+  --color-mist-500: #71819d;
 }
 
 html {

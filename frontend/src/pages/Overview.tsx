@@ -35,8 +35,34 @@ export function OverviewPage() {
   const summary = result?.summary
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[320px_1fr]">
+    <div className="space-y-5">
+      <section className="relative overflow-hidden rounded-2xl border border-ink-700 bg-gradient-to-br from-ink-900 via-ink-850 to-ink-900 px-5 py-5 shadow-2xl shadow-black/10 sm:px-6">
+        <div className="pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-teal-400/10 blur-3xl" />
+        <div className="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-400">
+              <span className="size-1.5 rounded-full bg-teal-400 shadow-[0_0_0_4px] shadow-teal-400/10" />
+              Operational command center
+            </div>
+            <h1 className="text-2xl font-semibold tracking-tight text-mist-100 sm:text-3xl">Hospital resilience overview</h1>
+            <p className="mt-1.5 max-w-2xl text-sm leading-6 text-mist-400">Model the impact of a disruption, identify where capacity breaks, and turn the result into an ordered action plan.</p>
+          </div>
+          <div className="flex shrink-0 items-center gap-2 rounded-full border border-ink-600 bg-ink-950/40 px-3 py-2 text-xs text-mist-300">
+            <span className={`size-2 rounded-full ${run.offline ? 'bg-amber-400' : 'bg-teal-400'}`} />
+            {run.offline ? 'Demo data' : 'Engine ready'}
+          </div>
+        </div>
+      </section>
+
+      <div className="grid gap-5 lg:grid-cols-[320px_1fr]">
       <div className="space-y-4">
+        <div className="flex items-center justify-between px-1">
+          <div>
+            <p className="text-sm font-semibold text-mist-200">Build a scenario</p>
+            <p className="text-xs text-mist-500">Tune assumptions before running</p>
+          </div>
+          <span className="rounded-full border border-ink-700 bg-ink-850 px-2 py-1 text-[10px] font-medium uppercase tracking-wide text-mist-400">Step 1</span>
+        </div>
         <ScenarioControls
           request={request}
           onChange={setRequest}
@@ -74,6 +100,13 @@ export function OverviewPage() {
 
         {summary && result && (
           <>
+            <div className="mb-1 flex items-end justify-between px-1">
+              <div>
+                <p className="text-sm font-semibold text-mist-200">Resilience snapshot</p>
+                <p className="text-xs text-mist-500">Calculated from the selected scenario</p>
+              </div>
+              <span className="text-xs text-mist-500">72-hour horizon</span>
+            </div>
             <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
               <KpiCard label="Resilience Index" value={summary.resilience_index.toFixed(1)} unit="0-100"
                 tooltip="100 minus weighted normalised penalties; transparent planning index, not a validated safety score. Formula in docs/equations.md." />
@@ -110,6 +143,7 @@ export function OverviewPage() {
             </ChartFrame>
           </>
         )}
+      </div>
       </div>
     </div>
   )

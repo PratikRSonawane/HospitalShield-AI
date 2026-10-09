@@ -27,7 +27,7 @@ export function KpiCard({ label, value, unit, delta, goodWhenDown = true, toolti
     : ''
   return (
     <div
-      className="relative rounded-lg border border-ink-700 bg-ink-850 p-4"
+      className="group relative overflow-hidden rounded-xl border border-ink-700 bg-ink-850/90 p-4 shadow-lg shadow-black/5 transition-colors hover:border-ink-600"
       title={tooltip}
     >
       <div className="text-xs font-medium uppercase tracking-wide text-mist-400">{label}</div>
