@@ -1,0 +1,141 @@
+{
+  "hospital_name": "Fictional General Hospital (synthetic)",
+  "ed": {
+    "bays": 26,
+    "nurse_roster": 10,
+    "patients_per_nurse": 4,
+    "los_hours": 4.0
+  },
+  "ward": {
+    "beds": 100,
+    "nurse_roster": 18,
+    "patients_per_nurse": 6,
+    "alos_hours": 108,
+    "initial_occupied": 80,
+    "surge_beds_available": 15
+  },
+  "icu": {
+    "beds": 20,
+    "nurse_roster": 9,
+    "patients_per_nurse": 2,
+    "alos_hours": 96,
+    "initial_occupied": 14,
+    "surge_beds_available": 4
+  },
+  "arrivals": {
+    "baseline_per_hour": 5.6,
+    "diurnal_profile": [
+      0.859,
+      0.827,
+      0.807,
+      0.8,
+      0.807,
+      0.827,
+      0.859,
+      0.9,
+      0.948,
+      1.0,
+      1.052,
+      1.1,
+      1.141,
+      1.173,
+      1.193,
+      1.2,
+      1.193,
+      1.173,
+      1.141,
+      1.1,
+      1.052,
+      1.0,
+      0.948,
+      0.875
+    ],
+    "p_admit_ward": 0.13,
+    "p_admit_icu": 0.026
+  },
+  "power": {
+    "grid_capacity_kw": 450.0,
+    "critical_load_kw": 220.0,
+    "noncritical_load_kw": 130.0,
+    "noncritical_diurnal_profile": [
+      0.844,
+      0.82,
+      0.805,
+      0.8,
+      0.805,
+      0.82,
+      0.844,
+      0.875,
+      0.911,
+      0.95,
+      0.989,
+      1.025,
+      1.056,
+      1.081,
+      1.095,
+      1.1,
+      1.095,
+      1.081,
+      1.056,
+      1.025,
+      0.989,
+      0.95,
+      0.911,
+      0.875
+    ],
+    "cooling_base_kw": 50.0,
+    "cooling_threshold_c": 28.0,
+    "cooling_kw_per_deg_c_above": 4.0,
+    "cooling_critical_fraction": 0.5,
+    "generator_capacity_kw": 300.0,
+    "fuel_litres": 2500.0,
+    "fuel_l_per_kwh": 0.28,
+    "surge_bed_kw": 1.5,
+    "max_shed_fraction_of_noncritical": 0.4,
+    "power_derate_factor_when_critical_at_risk": 0.85
+  },
+  "staffing": {
+    "max_reallocation_fraction_of_source": 0.2,
+    "min_source_floor_fraction": 0.8
+  },
+  "surge": {
+    "activation_delay_hours": 6
+  },
+  "supplies": {
+    "items": [
+      "oxygen",
+      "essential_meds"
+    ],
+    "units_per_weighted_bed_hour": {
+      "oxygen": 1.0,
+      "essential_meds": 1.0
+    },
+    "initial_cover_hours": 36,
+    "icu_weight": 2.0,
+    "ed_weight": 0.5,
+    "scheduled_resupply_fraction": 1.0,
+    "low_cover_hours": 24,
+    "stockout_derate_factor": 0.8,
+    "emergency_resupply_max_cover_hours": 24,
+    "emergency_lead_time_hours": 12
+  },
+  "recall": {
+    "max_fraction_of_roster": 0.15,
+    "lead_time_hours": 4
+  },
+  "thresholds": {
+    "occupancy_warn_pct": 90,
+    "reserve_low_pct": 10,
+    "fuel_low_hours": 12,
+    "ed_boarding_warn": 4,
+    "ed_waiting_high": 10
+  },
+  "resilience_weights": {
+    "occupancy": 0.22,
+    "overflow": 0.22,
+    "staffing": 0.13,
+    "power_deficit": 0.18,
+    "critical_risk": 0.13,
+    "supply": 0.12
+  }
+}
