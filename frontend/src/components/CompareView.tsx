@@ -37,7 +37,7 @@ export function CompareView({ comparison }: { comparison: ComparisonResponse }) 
   const t = comparison.treatment.summary
   return (
     <div className="space-y-4">
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <div className="flex flex-wrap items-center gap-2">
           <h3 className="text-sm font-semibold tracking-tight text-mist-100">Side by side</h3>
           <ProvenanceBadge kind="CALCULATED" />
@@ -46,24 +46,24 @@ export function CompareView({ comparison }: { comparison: ComparisonResponse }) 
           </span>
         </div>
         <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
-          <div className="rounded-md border border-ink-600 p-3">
+          <div className="rounded-md border border-ink-700/80 bg-ink-950/60 p-3 transition-colors hover:border-ink-600 shadow-xs">
             <div className="text-[11px] font-semibold uppercase tracking-wider text-mist-400">Baseline</div>
             <div className="mt-1 text-2xl font-semibold tracking-tight tabular-nums text-mist-100">{num(b.resilience_index)}</div>
             <div className="mt-0.5 text-xs text-mist-400">Resilience Index</div>
           </div>
-          <div className="rounded-md border border-teal-400/40 bg-teal-400/5 p-3">
+          <div className="rounded-md border border-teal-500/40 bg-teal-500/10 p-3 transition-colors shadow-xs">
             <div className="text-[11px] font-semibold uppercase tracking-wider text-mist-400">With interventions</div>
-            <div className="mt-1 text-2xl font-semibold tracking-tight tabular-nums text-teal-400">{num(t.resilience_index)}</div>
+            <div className="mt-1 text-2xl font-semibold tracking-tight tabular-nums text-teal-300">{num(t.resilience_index)}</div>
             <div className="mt-0.5 text-xs text-mist-400 tabular-nums">
               Δ {(() => { const d = deltasOf(comparison).resilience_index; return typeof d?.absolute === 'number' ? ((d.absolute > 0 ? '+' : '') + num(d.absolute)) : '—' })()}
             </div>
           </div>
-          <div className="rounded-md border border-ink-600 p-3">
+          <div className="rounded-md border border-ink-700/80 bg-ink-950/60 p-3 transition-colors hover:border-ink-600 shadow-xs">
             <div className="text-[11px] font-semibold uppercase tracking-wider text-mist-400">Overflow patient-hours</div>
             <div className="mt-1 text-2xl font-semibold tracking-tight tabular-nums text-mist-100">{num(b.overflow_patient_hours, 0)} → {num(t.overflow_patient_hours, 0)}</div>
             <div className="mt-0.5 text-xs text-mist-400">baseline → intervention</div>
           </div>
-          <div className="rounded-md border border-ink-600 p-3">
+          <div className="rounded-md border border-ink-700/80 bg-ink-950/60 p-3 transition-colors hover:border-ink-600 shadow-xs">
             <div className="text-[11px] font-semibold uppercase tracking-wider text-mist-400">Energy unserved</div>
             <div className="mt-1 text-2xl font-semibold tracking-tight tabular-nums text-mist-100">{num(b.energy_unserved_kwh, 0)} → {num(t.energy_unserved_kwh, 0)}</div>
             <div className="mt-0.5 text-xs text-mist-400">kWh</div>
@@ -71,12 +71,12 @@ export function CompareView({ comparison }: { comparison: ComparisonResponse }) 
         </div>
       </section>
 
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Absolute and delta table</h3>
-        <div className="mt-2 overflow-auto">
+        <div className="mt-2.5 overflow-auto rounded border border-ink-800/80">
           <table className="w-full text-xs">
             <thead>
-              <tr className="text-left text-[11px] font-semibold uppercase tracking-wider text-mist-400 border-b border-ink-700">
+              <tr className="text-left text-[11px] font-semibold uppercase tracking-wider text-mist-400 border-b border-ink-800 bg-ink-950/40">
                 <th scope="col" className="px-2.5 py-1.5">Metric</th>
                 <th scope="col" className="px-2.5 py-1.5">Baseline</th>
                 <th scope="col" className="px-2.5 py-1.5">Intervention</th>
@@ -95,7 +95,7 @@ export function CompareView({ comparison }: { comparison: ComparisonResponse }) 
                   ? ((delta < 0) === (m.goodWhenDown ?? true) ? 'text-teal-400' : 'text-rose-400')
                   : 'text-mist-400'
                 return (
-                  <tr key={m.key} className="border-t border-ink-700/60 hover:bg-ink-800/40">
+                  <tr key={m.key} className="border-t border-ink-800/50 hover:bg-ink-850/40">
                     <td className="px-2.5 py-1.5 font-medium text-mist-200">
                       {m.label} <span className="font-mono text-[10px] text-mist-400">{m.unit}</span>
                     </td>
@@ -115,13 +115,13 @@ export function CompareView({ comparison }: { comparison: ComparisonResponse }) 
         </div>
       </section>
 
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Attribution (each intervention alone)</h3>
-        <ul className="mt-2 space-y-2 text-xs">
+        <ul className="mt-2.5 space-y-2 text-xs">
           {comparison.attribution?.map((a, i) => {
             const ri = ((a.deltas as unknown as Record<string, Delta>)?.resilience_index)?.absolute
             return (
-              <li key={i} className="rounded-md border border-ink-600 bg-ink-900 p-2.5">
+              <li key={i} className="rounded-md border border-ink-800/80 bg-ink-950/60 p-2.5 transition-colors hover:border-ink-700">
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-mist-200">{a.intervention}</span>
                   <span className={`font-mono text-[11px] tabular-nums ${typeof ri === 'number' && ri !== 0 ? (ri > 0 ? 'text-teal-400' : 'text-rose-400') : 'text-mist-400'}`}>
@@ -135,7 +135,7 @@ export function CompareView({ comparison }: { comparison: ComparisonResponse }) 
         </ul>
       </section>
 
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Why it changed</h3>
         <ul className="mt-2 list-inside list-disc space-y-1 text-xs leading-relaxed text-mist-300">
           {(comparison.explanations ?? []).map((e, i) => <li key={i}>{e}</li>)}

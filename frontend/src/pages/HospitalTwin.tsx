@@ -11,7 +11,7 @@ export function HospitalTwinPage() {
 
   if (!result) {
     return (
-      <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center">
+      <div className="rounded-lg border border-dashed border-ink-700/80 bg-ink-900/30 p-10 text-center">
         <p className="text-sm font-medium text-mist-300">Run a scenario first (Overview or Scenario Lab).</p>
       </div>
     )
@@ -22,7 +22,7 @@ export function HospitalTwinPage() {
   return (
     <div className="space-y-4">
       {offline && <p className="text-xs font-medium text-amber-400">PRECOMPUTED demo run.</p>}
-      <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-semibold tracking-tight text-mist-100">Hospital twin — time scrubber</h2>
           <p className="text-xs text-mist-400">Status = colour + icon + text, computed by the backend each hour.</p>

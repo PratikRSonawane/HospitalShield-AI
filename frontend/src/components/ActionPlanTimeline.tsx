@@ -41,7 +41,7 @@ export function ActionPlanTimeline({ plan, horizon, onApply, applying }: {
 }) {
   const steps = plan.action_plan
   return (
-    <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+    <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h3 className="text-sm font-semibold tracking-tight text-mist-100">
@@ -57,7 +57,7 @@ export function ActionPlanTimeline({ plan, horizon, onApply, applying }: {
           type="button"
           onClick={onApply}
           disabled={applying || steps.length === 0}
-          className="rounded-md bg-teal-500 px-3 py-1.5 text-xs font-semibold text-ink-950 transition-colors hover:bg-teal-400 disabled:opacity-50 no-print"
+          className="rounded-md bg-teal-500 px-3.5 py-1.5 text-xs font-semibold text-ink-950 shadow-xs transition-all hover:bg-teal-400 active:scale-[0.99] disabled:opacity-50 no-print"
         >
           {applying ? 'Applying…' : 'Apply plan → Compare'}
         </button>

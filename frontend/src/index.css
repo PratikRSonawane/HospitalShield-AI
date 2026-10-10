@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink-950: #0a0f1c;
-  --color-ink-900: #0f1626;
-  --color-ink-850: #131c30;
-  --color-ink-800: #1a2438;
-  --color-ink-700: #243049;
-  --color-ink-600: #33415e;
+  --color-ink-950: #080d19;
+  --color-ink-900: #0c1424;
+  --color-ink-850: #101a2e;
+  --color-ink-800: #16223b;
+  --color-ink-700: #1e2e4d;
+  --color-ink-600: #2d416b;
   --color-mist-500: #64748b;
-  --color-mist-400: #8b9bb8;
-  --color-mist-300: #aab6cf;
-  --color-mist-200: #ccd5e6;
-  --color-mist-100: #e8eef8;
+  --color-mist-400: #8da0be;
+  --color-mist-300: #b0c0d8;
+  --color-mist-200: #d2dded;
+  --color-mist-100: #f1f5f9;
   --color-teal-400: #2dd4bf;
-  --color-teal-500: #14b8a6;
+  --color-teal-500: #0d9488;
   --color-amber-400: #fbbf24;
   --color-rose-400: #fb7185;
   --color-violet-400: #a78bfa;
@@ -31,11 +31,22 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(circle at 50% 0%, rgba(20, 34, 60, 0.25) 0%, transparent 60%);
+  background-attachment: fixed;
 }
 
 /* Numeric & tabular presentation */
 .tabular-nums {
   font-variant-numeric: tabular-nums;
+}
+
+/* Medical digital twin panel styling */
+.med-card {
+  @apply rounded-lg border border-ink-700/60 bg-ink-900/70 p-4 transition-colors;
+}
+
+.med-card-hover {
+  @apply hover:border-ink-600/70 hover:bg-ink-900/80;
 }
 
 /* status colors also carry an icon + text everywhere (never colour alone) */

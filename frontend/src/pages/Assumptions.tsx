@@ -112,7 +112,7 @@ export function AssumptionsPage() {
 
   return (
     <div className="space-y-4">
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <div className="flex flex-wrap items-center gap-2">
           <h2 className="text-sm font-semibold tracking-tight text-mist-100">Assumptions and data</h2>
           <ProvenanceBadge kind="SYNTHETIC" />
@@ -127,12 +127,12 @@ export function AssumptionsPage() {
 
       {hospital ? (
         PARAM_ROWS.map((group) => (
-          <section key={group.group} className="rounded-lg border border-ink-700 bg-ink-850 p-4" aria-label={group.group}>
+          <section key={group.group} className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70" aria-label={group.group}>
             <h3 className="text-sm font-semibold tracking-tight text-mist-100">{group.group}</h3>
-            <div className="mt-2 overflow-auto">
+            <div className="mt-2.5 overflow-auto rounded border border-ink-800/80">
               <table className="w-full text-xs">
                 <thead>
-                  <tr className="text-left text-[11px] font-semibold uppercase tracking-wider text-mist-400 border-b border-ink-700">
+                  <tr className="text-left text-[11px] font-semibold uppercase tracking-wider text-mist-400 border-b border-ink-800 bg-ink-950/40">
                     <th scope="col" className="px-2.5 py-1.5">Parameter</th>
                     <th scope="col" className="px-2.5 py-1.5">Value</th>
                     <th scope="col" className="px-2.5 py-1.5">Unit</th>
@@ -142,7 +142,7 @@ export function AssumptionsPage() {
                 </thead>
                 <tbody>
                   {group.rows.map((row) => (
-                    <tr key={row.name} className="border-t border-ink-700/60 hover:bg-ink-800/40">
+                    <tr key={row.name} className="border-t border-ink-800/50 hover:bg-ink-850/40">
                       <td className="px-2.5 py-1.5 font-mono text-[11px] text-mist-300">{row.name}</td>
                       <td className="px-2.5 py-1.5 font-mono tabular-nums text-mist-200">{row.get(hospital)}</td>
                       <td className="px-2.5 py-1.5 text-mist-400">{row.unit}</td>
@@ -156,12 +156,12 @@ export function AssumptionsPage() {
           </section>
         ))
       ) : (
-        <div className="rounded-lg border border-dashed border-ink-600 p-8 text-center text-xs leading-relaxed text-mist-400">
+        <div className="rounded-lg border border-dashed border-ink-700/80 bg-ink-900/30 p-8 text-center text-xs leading-relaxed text-mist-400">
           Backend unreachable — showing nothing rather than hard-coded values. Start the API to review parameters.
         </div>
       )}
 
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4" aria-label="Hospital profiles">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70" aria-label="Hospital profiles">
         <div className="flex flex-wrap items-center gap-2">
           <h3 className="text-sm font-semibold tracking-tight text-mist-100">Bring your own hospital</h3>
           <ProvenanceBadge kind="SYNTHETIC" title="Uploaded configurations are your responsibility to validate; the engine checks structure and bounds only." />
@@ -178,7 +178,7 @@ export function AssumptionsPage() {
             value={hospitalProfile}
             disabled={offline}
             onChange={(e) => setHospitalProfile(e.target.value)}
-            className="rounded-md border border-ink-600 bg-ink-900 px-2.5 py-1.5 text-xs font-medium text-mist-200 focus:border-teal-400 focus:outline-none disabled:opacity-50">
+            className="rounded-md border border-ink-700/80 bg-ink-950/70 px-2.5 py-1.5 text-xs font-medium text-mist-100 focus:border-teal-400 focus:outline-none disabled:opacity-50">
             {profiles.length === 0 && <option value="demo">demo</option>}
             {profiles.map((p) => (
               <option key={p.id} value={p.id}>{p.id} — {p.hospital_name}</option>
@@ -187,7 +187,7 @@ export function AssumptionsPage() {
           <a
             href="/hospital_template.json"
             download
-            className="rounded-md border border-ink-600 px-2.5 py-1.5 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400">
+            className="rounded-md border border-ink-700/80 bg-ink-850 px-2.5 py-1.5 text-xs font-medium text-mist-300 transition-all hover:border-teal-400 hover:text-teal-300">
             ⬇ Download template JSON
           </a>
           <input
@@ -197,7 +197,7 @@ export function AssumptionsPage() {
             aria-label="Upload hospital configuration JSON"
             disabled={uploading || offline}
             onChange={(e) => { const f = e.target.files?.[0]; if (f) void handleUpload(f) }}
-            className="text-xs text-mist-400 file:mr-2 file:rounded-md file:border-0 file:bg-teal-500 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-ink-950 transition-colors" />
+            className="text-xs text-mist-400 file:mr-2 file:rounded-md file:border-0 file:bg-teal-500 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-ink-950 transition-colors cursor-pointer" />
         </div>
         {uploading && <p className="mt-2 text-xs text-mist-400">Validating and running the sanity check…</p>}
         {uploadMessage && (
@@ -213,7 +213,7 @@ export function AssumptionsPage() {
         )}
       </section>
 
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Datasets and calibration path</h3>
         <ul className="mt-2 list-inside list-disc space-y-1.5 text-xs leading-relaxed text-mist-300">
           <li><span className="text-mist-100 font-medium">MIMIC-IV v3.1 (PhysioNet)</span> — credentialed access under a data use agreement. Row-level data never enters this repo, prompts or logs. Only locally computed aggregates with small-cell suppression (cells &lt; 10 removed) may calibrate LOS/admission distributions, if your agreement allows. See scripts/calibrate_from_mimic.py.</li>
@@ -222,7 +222,7 @@ export function AssumptionsPage() {
         </ul>
       </section>
 
-      <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <section className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Adapting to real hospital data</h3>
         <p className="mt-1 text-xs leading-relaxed text-mist-400">
           Use the upload panel above with data/hospital_template.json (every parameter, unit and bound documented),

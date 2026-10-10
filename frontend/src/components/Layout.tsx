@@ -56,19 +56,19 @@ export function Layout() {
   return (
     <div className="min-h-screen">
       <OfflineBanner />
-      <header className="no-print sticky top-0 z-40 border-b border-ink-700 bg-ink-900/95 backdrop-blur">
+      <header className="no-print sticky top-0 z-40 border-b border-ink-800/80 bg-ink-950/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-2.5">
-          <NavLink to="/" className="flex items-center gap-2">
-            <span aria-hidden className="text-lg">🛡️</span>
+          <NavLink to="/" className="flex items-center gap-2.5">
+            <span aria-hidden className="text-base text-teal-400">🛡️</span>
             <span className="text-sm font-semibold tracking-tight text-mist-100">HospitalShield AI</span>
           </NavLink>
-          <nav aria-label="Main" className="ml-4 hidden gap-1 md:flex">
+          <nav aria-label="Main" className="ml-4 hidden gap-1.5 md:flex">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `rounded-md px-3 py-1.5 text-xs font-medium tracking-normal transition-colors ${isActive ? 'bg-ink-700 text-mist-100' : 'text-mist-400 hover:bg-ink-800 hover:text-mist-200'}`}
+                  `rounded-md px-3 py-1.5 text-xs font-medium tracking-normal transition-all ${isActive ? 'bg-ink-800/90 text-teal-300 border border-teal-500/25 shadow-xs' : 'text-mist-400 hover:bg-ink-850/80 hover:text-mist-200 border border-transparent'}`}
               >
                 {item.label}
               </NavLink>
@@ -88,7 +88,7 @@ export function Layout() {
         </main>
       </ErrorBoundary>
 
-      <footer className="no-print mt-8 border-t border-ink-700 bg-ink-900/60 px-4 py-4 text-[11px] leading-relaxed text-mist-400">
+      <footer className="no-print mt-8 border-t border-ink-800/70 bg-ink-950/60 px-4 py-4 text-[11px] leading-relaxed text-mist-400">
         <div className="mx-auto max-w-7xl space-y-1">
           <p>
             Model version <span className="font-mono text-mist-300">{modelVersion ?? '—'}</span> · Data:{' '}

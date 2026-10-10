@@ -12,10 +12,10 @@ export function FailurePointsPage() {
 
   if (!result) {
     return (
-      <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center">
+      <div className="rounded-lg border border-dashed border-ink-700/80 bg-ink-900/30 p-10 text-center">
         <p className="text-sm font-medium text-mist-300">No run yet.</p>
         <button
-          className="mt-3 rounded-md bg-teal-500 px-3 py-1.5 text-xs font-semibold text-ink-950 transition-colors hover:bg-teal-400"
+          className="mt-3 rounded-md bg-teal-500 px-3.5 py-1.5 text-xs font-semibold text-ink-950 shadow-xs transition-all hover:bg-teal-400 active:scale-[0.99]"
           onClick={() => void navigate('/')}
         >
           Go to Overview and run a scenario
@@ -28,7 +28,7 @@ export function FailurePointsPage() {
     <div className="grid gap-4 lg:grid-cols-2">
       <div className="space-y-4">
         <FailurePointTimeline failures={result.failure_points} />
-        <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+        <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
           <h3 className="text-sm font-semibold tracking-tight text-mist-100">Binding constraint ribbon</h3>
           <p className="mb-2 text-xs text-mist-400">The tightest resource each hour: power → supplies → staff → beds → ED flow.</p>
           <BindingRibbon constraints={result.series.map((r) => r.binding_constraint)} hours={result.series.length} />
@@ -55,7 +55,7 @@ export function FailurePointsPage() {
             }}
           />
         ) : (
-          <div className="rounded-lg border border-dashed border-ink-600 p-6 text-center text-xs leading-relaxed text-mist-400">
+          <div className="rounded-lg border border-dashed border-ink-700/80 bg-ink-900/30 p-6 text-center text-xs leading-relaxed text-mist-300">
             {planning
               ? 'Planner searching…'
               : offline

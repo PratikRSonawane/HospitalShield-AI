@@ -3,9 +3,9 @@
 import type { AlertEpisode } from '@/types/domain'
 
 const SEVERITY = {
-  warning: { cls: 'border-amber-400/40 bg-amber-400/10', text: 'text-amber-400', icon: '▲', word: 'WARNING' },
-  high: { cls: 'border-orange-400/40 bg-orange-400/10', text: 'text-orange-400', icon: '◆', word: 'HIGH' },
-  critical: { cls: 'border-rose-400/40 bg-rose-400/10', text: 'text-rose-400', icon: '■', word: 'CRITICAL' },
+  warning: { cls: 'border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/10', text: 'text-amber-400', icon: '▲', word: 'WARNING' },
+  high: { cls: 'border-amber-600/30 bg-amber-600/5 hover:bg-amber-600/10', text: 'text-amber-300', icon: '◆', word: 'HIGH' },
+  critical: { cls: 'border-rose-500/30 bg-rose-500/5 hover:bg-rose-500/10', text: 'text-rose-400', icon: '■', word: 'CRITICAL' },
 } as const
 
 export function AlertPanel({ alerts, onHighlight, highlight }: {
@@ -15,14 +15,14 @@ export function AlertPanel({ alerts, onHighlight, highlight }: {
 }) {
   if (!alerts.length) {
     return (
-      <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Alerts</h3>
         <p className="mt-2 text-xs text-mist-400">● No alerts fired in this run.</p>
       </div>
     )
   }
   return (
-    <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+    <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">
           Alerts <span className="ml-1 text-xs font-normal text-mist-400">({alerts.length} episodes)</span>

@@ -22,14 +22,14 @@ export function BindingRibbon({ constraints, hours }: { constraints: string[]; h
 export function FailurePointTimeline({ failures }: { failures: FailurePoint[] }) {
   if (!failures.length) {
     return (
-      <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+      <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
         <h3 className="text-sm font-semibold tracking-tight text-mist-100">Failure points</h3>
         <p className="mt-2 text-xs text-teal-400">● No failure points in this run.</p>
       </div>
     )
   }
   return (
-    <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
+    <div className="rounded-lg border border-ink-700/60 bg-ink-900/60 p-4 transition-colors hover:border-ink-600/70">
       <h3 className="text-sm font-semibold tracking-tight text-mist-100">
         Failure points <span className="ml-1 text-xs font-normal text-mist-400">({failures.length})</span>
       </h3>
@@ -38,7 +38,7 @@ export function FailurePointTimeline({ failures }: { failures: FailurePoint[] })
         {failures.map((f) => {
           const color = SEV[(f.peak_severity as keyof typeof SEV) ?? 'high'] ?? SEV.high
           return (
-            <li key={`${f.rank}-${f.rule_id}-${f.resource}`} className="rounded-md border border-ink-600 bg-ink-900 p-3">
+            <li key={`${f.rank}-${f.rule_id}-${f.resource}`} className="rounded-md border border-ink-800/80 bg-ink-950/60 p-3 transition-colors hover:border-ink-700">
               <div className="flex flex-wrap items-center gap-2 text-xs">
                 <span className="rounded bg-ink-700 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-mist-200 tabular-nums">#{f.rank}</span>
                 <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color }}>{f.peak_severity.toUpperCase()}</span>
