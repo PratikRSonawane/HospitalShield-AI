@@ -7,15 +7,18 @@
   --color-ink-800: #1a2438;
   --color-ink-700: #243049;
   --color-ink-600: #33415e;
+  --color-mist-500: #64748b;
   --color-mist-400: #8b9bb8;
   --color-mist-300: #aab6cf;
   --color-mist-200: #ccd5e6;
+  --color-mist-100: #e8eef8;
   --color-teal-400: #2dd4bf;
   --color-teal-500: #14b8a6;
   --color-amber-400: #fbbf24;
   --color-rose-400: #fb7185;
   --color-violet-400: #a78bfa;
-  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 html {
@@ -24,6 +27,15 @@ html {
 
 body {
   @apply bg-ink-950 text-mist-200 font-sans antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Numeric & tabular presentation */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 /* status colors also carry an icon + text everywhere (never colour alone) */

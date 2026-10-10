@@ -83,7 +83,7 @@ export function DemoMode() {
       <button
         type="button"
         onClick={() => { setActive(!active); setStepIndex(active ? -1 : 0) }}
-        className="rounded bg-teal-500 px-3 py-1.5 text-xs font-semibold text-ink-950 hover:bg-teal-400"
+        className="rounded-md bg-teal-500 px-3 py-1.5 text-xs font-semibold text-ink-950 transition-colors hover:bg-teal-400"
         aria-pressed={active}
       >
         ▶ Demo Mode
@@ -91,20 +91,20 @@ export function DemoMode() {
       {active && current && (
         <div role="dialog" aria-label="Demo mode" className="fixed bottom-4 left-4 right-4 z-50 rounded-lg border border-teal-400/40 bg-ink-900/95 p-4 shadow-xl backdrop-blur md:left-auto md:right-6 md:w-96">
           <div className="flex items-start justify-between gap-2">
-            <h2 className="text-sm font-semibold text-teal-400">{current.title}</h2>
-            <button className="text-mist-400 hover:text-mist-200" onClick={() => { setActive(false); setStepIndex(-1) }} aria-label="Close demo mode">✕</button>
+            <h2 className="text-sm font-semibold tracking-tight text-teal-400">{current.title}</h2>
+            <button className="text-xs text-mist-400 hover:text-mist-200" onClick={() => { setActive(false); setStepIndex(-1) }} aria-label="Close demo mode">✕</button>
           </div>
-          <p className="mt-2 text-xs text-mist-300">{current.annotation}</p>
+          <p className="mt-2 text-xs leading-relaxed text-mist-300">{current.annotation}</p>
           <div className="mt-3 flex items-center justify-between">
             <div className="flex gap-1" aria-hidden>
               {steps.map((_, i) => (
-                <span key={i} className={`h-1.5 w-6 rounded ${i <= stepIndex ? 'bg-teal-400' : 'bg-ink-600'}`} />
+                <span key={i} className={`h-1.5 w-6 rounded-full transition-colors ${i <= stepIndex ? 'bg-teal-400' : 'bg-ink-600'}`} />
               ))}
             </div>
             <div className="flex gap-2">
-              <button className="rounded border border-ink-600 px-2 py-1 text-xs text-mist-300" disabled={stepIndex === 0}
+              <button className="rounded-md border border-ink-600 px-2.5 py-1 text-xs font-medium text-mist-300 transition-colors hover:border-ink-500 hover:text-mist-100 disabled:opacity-40" disabled={stepIndex === 0}
                 onClick={() => setStepIndex((i) => Math.max(0, i - 1))}>Back</button>
-              <button className="rounded bg-teal-500 px-3 py-1 text-xs font-semibold text-ink-950"
+              <button className="rounded-md bg-teal-500 px-3 py-1 text-xs font-semibold text-ink-950 transition-colors hover:bg-teal-400"
                 onClick={() => stepIndex === steps.length - 1 ? (setActive(false), setStepIndex(-1)) : setStepIndex((i) => i + 1)}>
                 {stepIndex === steps.length - 1 ? 'Finish' : 'Next'}
               </button>

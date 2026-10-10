@@ -23,40 +23,42 @@ export function FailurePointTimeline({ failures }: { failures: FailurePoint[] })
   if (!failures.length) {
     return (
       <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-        <h3 className="text-sm font-semibold text-mist-200">Failure points</h3>
-        <p className="mt-2 text-sm text-teal-400">● No failure points in this run.</p>
+        <h3 className="text-sm font-semibold tracking-tight text-mist-100">Failure points</h3>
+        <p className="mt-2 text-xs text-teal-400">● No failure points in this run.</p>
       </div>
     )
   }
   return (
     <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-      <h3 className="text-sm font-semibold text-mist-200">Failure points ({failures.length})</h3>
-      <p className="text-xs text-mist-400">Ranked by first hour then severity. ↳ marks a cascade child.</p>
+      <h3 className="text-sm font-semibold tracking-tight text-mist-100">
+        Failure points <span className="ml-1 text-xs font-normal text-mist-400">({failures.length})</span>
+      </h3>
+      <p className="mt-0.5 text-xs text-mist-400">Ranked by first hour then severity. ↳ marks a cascade child.</p>
       <ol className="mt-3 space-y-2">
         {failures.map((f) => {
           const color = SEV[(f.peak_severity as keyof typeof SEV) ?? 'high'] ?? SEV.high
           return (
-            <li key={`${f.rank}-${f.rule_id}-${f.resource}`} className="rounded border border-ink-600 bg-ink-900 p-3">
+            <li key={`${f.rank}-${f.rule_id}-${f.resource}`} className="rounded-md border border-ink-600 bg-ink-900 p-3">
               <div className="flex flex-wrap items-center gap-2 text-xs">
-                <span className="rounded bg-ink-700 px-1.5 py-0.5 font-semibold text-mist-200">#{f.rank}</span>
-                <span className="font-semibold" style={{ color }}>{f.peak_severity.toUpperCase()}</span>
-                <span className="text-mist-300">{f.resource}</span>
-                <span className="rounded border border-ink-600 px-1.5 py-0.5 text-mist-400">{f.rule_id}</span>
-                <span className="text-mist-400">
+                <span className="rounded bg-ink-700 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-mist-200 tabular-nums">#{f.rank}</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color }}>{f.peak_severity.toUpperCase()}</span>
+                <span className="font-medium text-mist-200">{f.resource}</span>
+                <span className="rounded border border-ink-600 px-1.5 py-0.5 font-mono text-[10px] text-mist-400">{f.rule_id}</span>
+                <span className="font-mono text-[11px] tabular-nums text-mist-400">
                   h {f.first_hour}–{f.last_hour}
                 </span>
                 {f.cascade_parent && (
-                  <span className="text-violet-400" title={`cascades from ${f.cascade_parent}`}>
+                  <span className="text-xs text-violet-400" title={`cascades from ${f.cascade_parent}`}>
                     ↳ cascade from {f.cascade_parent}
                   </span>
                 )}
                 {f.cascade_children.length > 0 && (
-                  <span className="text-violet-400" title={`cascades into ${f.cascade_children.join(', ')}`}>
+                  <span className="text-xs text-violet-400" title={`cascades into ${f.cascade_children.join(', ')}`}>
                     ↳ triggers {f.cascade_children.join(', ')}
                   </span>
                 )}
               </div>
-              <p className="mt-1 text-sm text-mist-300">{f.explanation}</p>
+              <p className="mt-1.5 text-xs leading-relaxed text-mist-300">{f.explanation}</p>
             </li>
           )
         })}

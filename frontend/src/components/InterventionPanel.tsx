@@ -39,7 +39,7 @@ export function draftToRequest(draft: InterventionDraft, base: SimulationRequest
   }
 }
 
-const btn = 'rounded border border-ink-600 px-2 py-1 text-xs text-mist-300 hover:border-teal-400 hover:text-teal-400 disabled:opacity-40'
+const btn = 'rounded border border-ink-600 px-2.5 py-1 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400 disabled:opacity-40'
 
 export function InterventionPanel({ draft, onChange, errorDetails, duration, locked }: {
   draft: InterventionDraft
@@ -56,7 +56,7 @@ export function InterventionPanel({ draft, onChange, errorDetails, duration, loc
   return (
     <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-mist-200">Interventions</h3>
+        <h3 className="text-sm font-semibold tracking-tight text-mist-100">Interventions</h3>
         <button type="button" className={btn} onClick={() => setOpen(!open)} aria-expanded={open} disabled={disabled}>
           {open ? 'Hide' : 'Edit interventions'}
         </button>

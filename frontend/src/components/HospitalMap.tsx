@@ -76,11 +76,11 @@ export function HospitalMap({ rows, selectedHour, onSelectHour }: {
 
   return (
     <div className="space-y-3">
-      <svg viewBox="0 0 720 360" className="w-full rounded-lg border border-ink-700 bg-ink-900" role="img"
+      <svg viewBox="0 0 720 360" className="w-full rounded-lg border border-ink-700 bg-ink-900 font-sans" role="img"
         aria-label={`Hospital map at hour ${hour}. Ward ${word(ward.status)}, ICU ${word(icu.status)}, ED ${word(ed.status)}. Grid ${gridUp ? 'up' : 'down'}, generator ${genRunning ? 'running' : 'idle'}, access ${staffAccess === 1 ? 'clear' : 'restricted'}.`}>
         {/* access road */}
         <path d="M 10 330 L 710 330" stroke={supplyBlocked ? '#fb7185' : '#33415e'} strokeWidth={supplyBlocked ? 4 : 8} strokeDasharray={supplyBlocked ? '12 8' : undefined} fill="none" />
-        <text x={16} y={322} fill={supplyBlocked ? '#fb7185' : '#8b9bb8'} fontSize={11}>
+        <text x={16} y={322} fill={supplyBlocked ? '#fb7185' : '#8b9bb8'} fontSize={11} fontFamily="var(--font-sans)">
           {supplyBlocked ? '■ Access road restricted' : '● Access road clear'} (staff access {(staffAccess * 100).toFixed(0)}%, deliveries {(delivery * 100).toFixed(0)}%)
         </text>
 
@@ -92,8 +92,8 @@ export function HospitalMap({ rows, selectedHour, onSelectHour }: {
         <g role="img" aria-label={`Grid ${gridUp ? 'connected' : 'disconnected'}`}>
           <line x1={90} y1={330} x2={90} y2={200} stroke={gridUp ? '#2dd4bf' : '#fb7185'} strokeWidth={3} strokeDasharray={gridUp ? undefined : '6 6'} />
           <rect x={30} y={130} width={120} height={70} rx={8} fill="#131c30" stroke={gridUp ? '#2dd4bf' : '#fb7185'} strokeWidth={2} />
-          <text x={44} y={155} fill="#ccd5e6" fontSize={13} fontWeight={600}>Grid link</text>
-          <text x={44} y={173} fill={gridUp ? '#2dd4bf' : '#fb7185'} fontSize={11}>
+          <text x={44} y={155} fill="#ccd5e6" fontSize={13} fontWeight={600} fontFamily="var(--font-sans)">Grid link</text>
+          <text x={44} y={173} fill={gridUp ? '#2dd4bf' : '#fb7185'} fontSize={11} fontFamily="var(--font-sans)">
             {gridUp ? `● Up · ${(row.grid_fraction * 100).toFixed(0)}%` : '■ Down (outage)'}
           </text>
         </g>
@@ -101,8 +101,8 @@ export function HospitalMap({ rows, selectedHour, onSelectHour }: {
         {/* generator */}
         <g role="img" aria-label={`Generator ${genRunning ? 'running' : 'idle'}, fuel ${Math.round(row.power.fuel_l)} litres`}>
           <rect x={190} y={130} width={140} height={70} rx={8} fill="#131c30" stroke={genRunning ? '#fbbf24' : '#33415e'} strokeWidth={2} />
-          <text x={204} y={155} fill="#ccd5e6" fontSize={13} fontWeight={600}>Generator</text>
-          <text x={204} y={173} fill={genRunning ? '#fbbf24' : '#8b9bb8'} fontSize={11}>
+          <text x={204} y={155} fill="#ccd5e6" fontSize={13} fontWeight={600} fontFamily="var(--font-sans)">Generator</text>
+          <text x={204} y={173} fill={genRunning ? '#fbbf24' : '#8b9bb8'} fontSize={11} fontFamily="var(--font-sans)">
             {genRunning ? `▲ Running · ${row.power.gen_output_kw.toFixed(0)} kW` : '○ Idle'} · {Math.round(row.power.fuel_l)} L
           </text>
         </g>
@@ -110,11 +110,11 @@ export function HospitalMap({ rows, selectedHour, onSelectHour }: {
         {/* supplies store */}
         <g role="img" aria-label={`Supplies store, oxygen cover ${row.supplies?.oxygen?.cover_hours ?? '—'} hours`}>
           <rect x={370} y={130} width={160} height={70} rx={8} fill="#131c30" stroke={supplyBlocked ? '#fb7185' : '#2dd4bf'} strokeWidth={2} />
-          <text x={384} y={155} fill="#ccd5e6" fontSize={13} fontWeight={600}>Supplies store</text>
-          <text x={384} y={173} fill="#8b9bb8" fontSize={11}>
+          <text x={384} y={155} fill="#ccd5e6" fontSize={13} fontWeight={600} fontFamily="var(--font-sans)">Supplies store</text>
+          <text x={384} y={173} fill="#8b9bb8" fontSize={11} fontFamily="var(--font-sans)">
             O₂ cover {row.supplies?.oxygen?.cover_hours != null ? row.supplies.oxygen.cover_hours.toFixed(0) : '—'} h
           </text>
-          <text x={384} y={189} fill={supplyBlocked ? '#fb7185' : '#2dd4bf'} fontSize={11}>
+          <text x={384} y={189} fill={supplyBlocked ? '#fb7185' : '#2dd4bf'} fontSize={11} fontFamily="var(--font-sans)">
             {supplyBlocked ? '■ Deliveries disrupted' : '● Deliveries normal'}
           </text>
         </g>
@@ -122,19 +122,19 @@ export function HospitalMap({ rows, selectedHour, onSelectHour }: {
         {/* binding constraint */}
         <g role="img" aria-label={`Binding constraint at hour ${hour}: ${row.binding_constraint}`}>
           <rect x={560} y={130} width={130} height={70} rx={8} fill="#131c30" stroke="#33415e" strokeWidth={1} />
-          <text x={574} y={155} fill="#8b9bb8" fontSize={11}>Binding constraint</text>
-          <text x={574} y={176} fill="#ccd5e6" fontSize={13} fontWeight={600}>{row.binding_constraint}</text>
+          <text x={574} y={155} fill="#8b9bb8" fontSize={11} fontFamily="var(--font-sans)">Binding constraint</text>
+          <text x={574} y={176} fill="#ccd5e6" fontSize={13} fontWeight={600} fontFamily="var(--font-sans)">{row.binding_constraint}</text>
         </g>
 
         {/* temperature */}
-        <text x={16} y={22} fill="#8b9bb8" fontSize={11}>Hour {hour} · {row.temperature_c != null ? `${row.temperature_c.toFixed(1)} °C` : ''} · demand {row.power.demand_kw.toFixed(0)} kW</text>
+        <text x={16} y={22} fill="#8b9bb8" fontSize={11} fontFamily="var(--font-sans)">Hour {hour} · {row.temperature_c != null ? `${row.temperature_c.toFixed(1)} °C` : ''} · demand {row.power.demand_kw.toFixed(0)} kW</text>
       </svg>
 
       <div className="flex items-center gap-3 no-print">
         <button
           type="button"
           onClick={() => setPlaying((p) => !p)}
-          className="rounded bg-ink-700 px-3 py-1.5 text-sm text-mist-200 hover:bg-ink-600"
+          className="rounded-md bg-ink-700 px-3 py-1.5 text-xs font-medium text-mist-100 transition-colors hover:bg-ink-600"
           aria-pressed={playing}
         >
           {playing ? '⏸ Pause' : '▶ Play'}
@@ -148,7 +148,7 @@ export function HospitalMap({ rows, selectedHour, onSelectHour }: {
           className="h-1.5 w-full accent-teal-400"
           aria-label="Time scrubber (hour)"
         />
-        <span className="w-14 text-right text-xs text-mist-400">h {hour}/{maxHour}</span>
+        <span className="w-16 text-right font-mono text-xs tabular-nums text-mist-400">h {hour}/{maxHour}</span>
       </div>
     </div>
   )

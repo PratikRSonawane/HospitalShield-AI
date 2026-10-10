@@ -47,17 +47,17 @@ export function OverviewPage() {
           onRun={() => { if (request) void run.runScenario(request) }}
         />
         <div className="rounded-lg border border-ink-700 bg-ink-850 p-4 text-xs text-mist-400">
-          <p className="font-semibold text-mist-300">Mission</p>
-          <p className="mt-1">scenario → calculated impact → failure points → actions in the best order → measured before/after.</p>
+          <p className="text-xs font-semibold tracking-tight text-mist-200">Mission</p>
+          <p className="mt-1 text-xs leading-relaxed text-mist-400">scenario → calculated impact → failure points → actions in the best order → measured before/after.</p>
           <div className="mt-3 flex flex-col gap-2">
-            <Link to="/failures" className="rounded border border-ink-600 px-3 py-1.5 text-center hover:border-teal-400">Failure points & plan →</Link>
-            <Link to="/compare" className="rounded border border-ink-600 px-3 py-1.5 text-center hover:border-teal-400">Compare runs →</Link>
+            <Link to="/failures" className="rounded-md border border-ink-600 px-3 py-1.5 text-center text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400">Failure points & plan →</Link>
+            <Link to="/compare" className="rounded-md border border-ink-600 px-3 py-1.5 text-center text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400">Compare runs →</Link>
           </div>
           {result && (
             <div className="mt-3 flex gap-2 no-print">
-              <button className="flex-1 rounded border border-ink-600 px-2 py-1 hover:border-teal-400" onClick={() => exportResult(result)}>Export JSON</button>
-              <button className="flex-1 rounded border border-ink-600 px-2 py-1 hover:border-teal-400" onClick={() => exportSeriesCsv(result)}>Export CSV</button>
-              <button className="rounded border border-ink-600 px-2 py-1 hover:border-teal-400" onClick={() => window.print()}>Print</button>
+              <button className="flex-1 rounded-md border border-ink-600 px-2 py-1 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400" onClick={() => exportResult(result)}>Export JSON</button>
+              <button className="flex-1 rounded-md border border-ink-600 px-2 py-1 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400" onClick={() => exportSeriesCsv(result)}>Export CSV</button>
+              <button className="rounded-md border border-ink-600 px-2 py-1 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400" onClick={() => window.print()}>Print</button>
             </div>
           )}
         </div>
@@ -66,8 +66,8 @@ export function OverviewPage() {
       <div className="space-y-4">
         {!result && !run.loading && (
           <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center">
-            <p className="text-sm text-mist-400">Run a scenario to see the calculated operational impact.</p>
-            <p className="mt-1 text-xs text-mist-600">Everything you will see is computed by the backend engine — nothing is hard-coded here.</p>
+            <p className="text-sm font-medium text-mist-300">Run a scenario to see the calculated operational impact.</p>
+            <p className="mt-1 text-xs text-mist-400 leading-relaxed">Everything you will see is computed by the backend engine — nothing is hard-coded here.</p>
           </div>
         )}
         {run.loading && <div className="h-40 animate-pulse rounded-lg bg-ink-800" role="status" aria-label="Running simulation" />}
@@ -95,7 +95,9 @@ export function OverviewPage() {
 
             <div className="grid gap-4 lg:grid-cols-2">
               <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-                <h3 className="mb-2 text-sm font-semibold text-mist-200">Hospital twin — hour {run.selectedHour ?? 0}</h3>
+                <h3 className="mb-2 text-sm font-semibold tracking-tight text-mist-100">
+                  Hospital twin — hour <span className="font-mono tabular-nums">{run.selectedHour ?? 0}</span>
+                </h3>
                 <HospitalMap rows={result.series} selectedHour={run.selectedHour} onSelectHour={run.selectHour} />
               </div>
               <AlertPanel alerts={result.alerts} onHighlight={run.highlight} highlight={run.highlightRange} />

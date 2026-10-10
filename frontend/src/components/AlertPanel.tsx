@@ -16,18 +16,20 @@ export function AlertPanel({ alerts, onHighlight, highlight }: {
   if (!alerts.length) {
     return (
       <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-        <h3 className="text-sm font-semibold text-mist-200">Alerts</h3>
-        <p className="mt-2 text-sm text-mist-400">● No alerts fired in this run.</p>
+        <h3 className="text-sm font-semibold tracking-tight text-mist-100">Alerts</h3>
+        <p className="mt-2 text-xs text-mist-400">● No alerts fired in this run.</p>
       </div>
     )
   }
   return (
     <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-mist-200">Alerts ({alerts.length} episodes)</h3>
+        <h3 className="text-sm font-semibold tracking-tight text-mist-100">
+          Alerts <span className="ml-1 text-xs font-normal text-mist-400">({alerts.length} episodes)</span>
+        </h3>
         {highlight && (
-          <button className="text-xs text-mist-400 underline" onClick={() => onHighlight(null)}>
-            clear highlight
+          <button className="text-xs font-medium text-teal-400 hover:underline" onClick={() => onHighlight(null)}>
+            Clear highlight
           </button>
         )}
       </div>
@@ -41,17 +43,17 @@ export function AlertPanel({ alerts, onHighlight, highlight }: {
                 type="button"
                 onClick={() => onHighlight(active ? null : [a.first_hour, a.last_hour])}
                 aria-pressed={active}
-                className={`w-full rounded border p-3 text-left ${style.cls} ${active ? 'ring-2 ring-teal-400' : ''}`}
+                className={`w-full rounded-md border p-3 text-left transition-colors ${style.cls} ${active ? 'ring-2 ring-teal-400' : 'hover:border-opacity-80'}`}
               >
                 <div className="flex items-center justify-between text-xs">
-                  <span className={`font-semibold ${style.text}`}>{style.icon} {style.word}</span>
-                  <span className="text-mist-400">
+                  <span className={`text-[10px] font-semibold uppercase tracking-wider ${style.text}`}>{style.icon} {style.word}</span>
+                  <span className="font-mono text-[11px] tabular-nums text-mist-400">
                     {a.rule_id} · hours {a.first_hour}–{a.last_hour} ({a.duration_hours} h)
                   </span>
                 </div>
-                <div className="mt-1 text-sm text-mist-200">{a.rule_text}</div>
-                <div className="mt-1 text-xs text-mist-400">
-                  {a.metric}: peak <span className="text-mist-200">{a.observed_peak} {a.unit}</span> · threshold {a.threshold} {a.unit} · affects {a.affected_variable}
+                <div className="mt-1 text-xs font-semibold tracking-tight text-mist-100">{a.rule_text}</div>
+                <div className="mt-1 text-xs text-mist-400 tabular-nums">
+                  {a.metric}: peak <span className="font-medium text-mist-200">{a.observed_peak} {a.unit}</span> · threshold {a.threshold} {a.unit} · affects {a.affected_variable}
                 </div>
               </button>
             </li>

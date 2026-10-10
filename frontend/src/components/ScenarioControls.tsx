@@ -60,7 +60,9 @@ function NumField({ label, value, min, max, step, unit, onChange, disabled }: {
 }) {
   return (
     <label className="block text-xs">
-      <span className="text-mist-400">{label} <span className="text-mist-600">({min}–{max} {unit})</span></span>
+      <span className="block text-[11px] font-medium text-mist-300">
+        {label} <span className="font-mono text-[10px] text-mist-400 tabular-nums">({min}–{max} {unit})</span>
+      </span>
       <input
         type="number"
         value={value}
@@ -69,7 +71,7 @@ function NumField({ label, value, min, max, step, unit, onChange, disabled }: {
         step={step}
         disabled={disabled}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-1 w-full rounded border border-ink-600 bg-ink-900 px-2 py-1.5 text-sm text-mist-200 disabled:opacity-50"
+        className="mt-1 w-full rounded border border-ink-600 bg-ink-900 px-2.5 py-1.5 text-xs font-mono tabular-nums text-mist-100 transition-colors focus:border-teal-400 focus:outline-none disabled:opacity-50"
       />
     </label>
   )
@@ -94,7 +96,7 @@ export function ScenarioControls({ request, onChange, info, error, errorDetails,
     <div className={`space-y-4 rounded-lg border border-ink-700 bg-ink-850 p-4 ${locked ? 'opacity-70' : ''}`}>
       <div>
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-mist-200">Scenario</h3>
+          <h3 className="text-sm font-semibold tracking-tight text-mist-100">Scenario</h3>
           <ProvenanceBadge kind="SCENARIO_ASSUMPTION" />
         </div>
         <div className="mt-2 grid grid-cols-2 gap-2" role="radiogroup" aria-label="Scenario preset">
@@ -106,14 +108,14 @@ export function ScenarioControls({ request, onChange, info, error, errorDetails,
               aria-checked={request.scenario === name}
               disabled={locked}
               onClick={() => onChange(applyPreset(request, name))}
-              className={`rounded border px-2 py-2 text-xs ${request.scenario === name ? 'border-teal-400 bg-teal-400/10 text-teal-400' : 'border-ink-600 text-mist-300 hover:border-ink-500'} disabled:cursor-not-allowed`}
+              className={`rounded border px-2.5 py-2 text-xs font-medium capitalize transition-colors ${request.scenario === name ? 'border-teal-400 bg-teal-400/10 text-teal-400' : 'border-ink-600 text-mist-300 hover:border-ink-500 hover:text-mist-200'} disabled:cursor-not-allowed`}
             >
               {name.replace(/_/g, ' ')}
             </button>
           ))}
         </div>
         {(() => { const preset = (info?.presets as unknown as Record<string, { description?: string } | undefined>)?.[request.scenario]; return preset?.description })() && (
-          <p className="mt-2 text-xs text-mist-400">{String((info?.presets as unknown as Record<string, { description?: string }>)[request.scenario]?.description)}</p>
+          <p className="mt-2 text-xs leading-relaxed text-mist-400">{String((info?.presets as unknown as Record<string, { description?: string }>)[request.scenario]?.description)}</p>
         )}
       </div>
 
@@ -140,14 +142,14 @@ export function ScenarioControls({ request, onChange, info, error, errorDetails,
           disabled={locked} onChange={(n) => set({ seed: n })} />
       </div>
 
-      <label className="flex items-center gap-2 text-xs text-mist-400">
+      <label className="flex items-center gap-2 text-xs text-mist-300">
         <input type="checkbox" checked={request.stochastic} disabled={locked}
           onChange={(e) => set({ stochastic: e.target.checked })} className="accent-teal-400" />
         Stochastic mode (seeded Poisson/Binomial demand randomness)
       </label>
 
       {error && (
-        <div role="alert" className="rounded border border-rose-400/40 bg-rose-400/10 p-2 text-xs text-rose-400">
+        <div role="alert" className="rounded border border-rose-400/40 bg-rose-400/10 p-2.5 text-xs text-rose-400">
           {error}
           {errorDetails.length > 0 && (
             <ul className="mt-1 list-inside list-disc text-mist-300">
@@ -164,7 +166,7 @@ export function ScenarioControls({ request, onChange, info, error, errorDetails,
           type="button"
           onClick={onRun}
           disabled={loading || locked}
-          className="flex-1 rounded bg-teal-500 px-3 py-2 text-sm font-semibold text-ink-950 hover:bg-teal-400 disabled:opacity-50"
+          className="flex-1 rounded-md bg-teal-500 px-3 py-2 text-xs font-semibold text-ink-950 transition-colors hover:bg-teal-400 disabled:opacity-50"
         >
           {loading ? 'Running…' : 'Run simulation'}
         </button>
@@ -172,7 +174,7 @@ export function ScenarioControls({ request, onChange, info, error, errorDetails,
           type="button"
           onClick={() => onChange(applyPreset(request, request.scenario))}
           disabled={locked}
-          className="rounded border border-ink-600 px-3 py-2 text-sm text-mist-300 hover:border-ink-500 disabled:opacity-50"
+          className="rounded-md border border-ink-600 px-3 py-2 text-xs font-medium text-mist-300 transition-colors hover:border-ink-500 hover:text-mist-100 disabled:opacity-50"
         >
           Reset
         </button>

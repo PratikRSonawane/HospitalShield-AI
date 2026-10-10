@@ -6,9 +6,16 @@ import {
 } from 'recharts'
 import type { HourRow } from '@/types/domain'
 
-const AXIS = { stroke: '#8b9bb8', fontSize: 11 }
+const AXIS = { stroke: '#8b9bb8', fontSize: 11, fontFamily: 'var(--font-sans)' }
 const GRID = '#243049'
-const TOOLTIP_STYLE = { backgroundColor: '#131c30', border: '1px solid #33415e', fontSize: 12 }
+const TOOLTIP_STYLE = {
+  backgroundColor: '#131c30',
+  border: '1px solid #33415e',
+  borderRadius: '6px',
+  fontSize: 12,
+  fontFamily: 'var(--font-sans)',
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+}
 
 export interface SeriesProps {
   rows: HourRow[]

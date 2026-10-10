@@ -15,12 +15,12 @@ export function ComparePage() {
     <div className="space-y-4">
       {!comparison && !loading && (
         <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center">
-          <p className="text-sm text-mist-400">
+          <p className="text-xs leading-relaxed text-mist-300">
             No comparison yet. Run a scenario, then use the planner's <em>Apply plan → Compare</em> button —
             or compare any run against its baseline from the Scenario Lab.
           </p>
           <button
-            className="mt-3 rounded bg-teal-500 px-3 py-1.5 text-sm font-semibold text-ink-950 hover:bg-teal-400"
+            className="mt-3 rounded-md bg-teal-500 px-3 py-1.5 text-xs font-semibold text-ink-950 transition-colors hover:bg-teal-400"
             onClick={() => {
               if (request && result) {
                 void runComparison(request).then((ok) => {
@@ -38,10 +38,10 @@ export function ComparePage() {
       {loading && <div className="h-40 animate-pulse rounded-lg bg-ink-800" role="status" aria-label="Running comparison" />}
       {comparison && (
         <>
-          {offline && <p className="text-xs text-amber-400">PRECOMPUTED demo comparison (backend unreachable).</p>}
+          {offline && <p className="text-xs font-medium text-amber-400">PRECOMPUTED demo comparison (backend unreachable).</p>}
           <div className="flex items-center gap-2 no-print">
             <ProvenanceBadge kind="CALCULATED" />
-            <button className="rounded border border-ink-600 px-2 py-1 text-xs hover:border-teal-400"
+            <button className="rounded-md border border-ink-600 px-2.5 py-1 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400"
               onClick={() => downloadJson(comparison, `hospitalshield-comparison-${comparison.baseline.run_id}.json`)}>
               Export comparison JSON
             </button>
@@ -49,11 +49,11 @@ export function ComparePage() {
           <CompareView comparison={comparison} />
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-              <h3 className="mb-2 text-sm font-semibold text-mist-200">Baseline occupancy</h3>
+              <h3 className="mb-2 text-sm font-semibold tracking-tight text-mist-100">Baseline occupancy</h3>
               <OccupancyChart rows={comparison.baseline.series} />
             </div>
             <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-              <h3 className="mb-2 text-sm font-semibold text-mist-200">With interventions</h3>
+              <h3 className="mb-2 text-sm font-semibold tracking-tight text-mist-100">With interventions</h3>
               <OccupancyChart rows={comparison.treatment.series} />
             </div>
           </div>

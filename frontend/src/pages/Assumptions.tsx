@@ -114,11 +114,11 @@ export function AssumptionsPage() {
     <div className="space-y-4">
       <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
         <div className="flex flex-wrap items-center gap-2">
-          <h2 className="text-sm font-semibold text-mist-200">Assumptions and data</h2>
+          <h2 className="text-sm font-semibold tracking-tight text-mist-100">Assumptions and data</h2>
           <ProvenanceBadge kind="SYNTHETIC" />
-          {modelVersion && <span className="text-xs text-mist-400">model {modelVersion}</span>}
+          {modelVersion && <span className="font-mono text-[11px] tabular-nums text-mist-400">model {modelVersion}</span>}
         </div>
-        <p className="mt-2 text-xs text-mist-400">
+        <p className="mt-2 text-xs leading-relaxed text-mist-400">
           {hospital?.hospital_name ?? 'Fictional General Hospital (synthetic)'}. Every number below is a labelled
           configuration input; all outputs elsewhere are CALCULATED from them. Scenario multipliers are planning
           assumptions, never empirical relationships.
@@ -128,26 +128,26 @@ export function AssumptionsPage() {
       {hospital ? (
         PARAM_ROWS.map((group) => (
           <section key={group.group} className="rounded-lg border border-ink-700 bg-ink-850 p-4" aria-label={group.group}>
-            <h3 className="text-sm font-semibold text-mist-200">{group.group}</h3>
+            <h3 className="text-sm font-semibold tracking-tight text-mist-100">{group.group}</h3>
             <div className="mt-2 overflow-auto">
               <table className="w-full text-xs">
                 <thead>
-                  <tr className="text-left text-mist-400">
-                    <th scope="col" className="px-2 py-1">Parameter</th>
-                    <th scope="col" className="px-2 py-1">Value</th>
-                    <th scope="col" className="px-2 py-1">Unit</th>
-                    <th scope="col" className="px-2 py-1">Label</th>
-                    <th scope="col" className="px-2 py-1">Rationale</th>
+                  <tr className="text-left text-[11px] font-semibold uppercase tracking-wider text-mist-400 border-b border-ink-700">
+                    <th scope="col" className="px-2.5 py-1.5">Parameter</th>
+                    <th scope="col" className="px-2.5 py-1.5">Value</th>
+                    <th scope="col" className="px-2.5 py-1.5">Unit</th>
+                    <th scope="col" className="px-2.5 py-1.5">Label</th>
+                    <th scope="col" className="px-2.5 py-1.5">Rationale</th>
                   </tr>
                 </thead>
                 <tbody>
                   {group.rows.map((row) => (
-                    <tr key={row.name} className="border-t border-ink-700">
-                      <td className="px-2 py-1 font-mono text-mist-300">{row.name}</td>
-                      <td className="px-2 py-1 text-mist-200">{row.get(hospital)}</td>
-                      <td className="px-2 py-1 text-mist-400">{row.unit}</td>
-                      <td className="px-2 py-1"><ProvenanceBadge kind={row.label} /></td>
-                      <td className="px-2 py-1 text-mist-400">{row.why}</td>
+                    <tr key={row.name} className="border-t border-ink-700/60 hover:bg-ink-800/40">
+                      <td className="px-2.5 py-1.5 font-mono text-[11px] text-mist-300">{row.name}</td>
+                      <td className="px-2.5 py-1.5 font-mono tabular-nums text-mist-200">{row.get(hospital)}</td>
+                      <td className="px-2.5 py-1.5 text-mist-400">{row.unit}</td>
+                      <td className="px-2.5 py-1.5"><ProvenanceBadge kind={row.label} /></td>
+                      <td className="px-2.5 py-1.5 text-mist-400 leading-normal">{row.why}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -156,29 +156,29 @@ export function AssumptionsPage() {
           </section>
         ))
       ) : (
-        <div className="rounded-lg border border-dashed border-ink-600 p-8 text-center text-sm text-mist-400">
+        <div className="rounded-lg border border-dashed border-ink-600 p-8 text-center text-xs leading-relaxed text-mist-400">
           Backend unreachable — showing nothing rather than hard-coded values. Start the API to review parameters.
         </div>
       )}
 
       <section className="rounded-lg border border-ink-700 bg-ink-850 p-4" aria-label="Hospital profiles">
         <div className="flex flex-wrap items-center gap-2">
-          <h3 className="text-sm font-semibold text-mist-200">Bring your own hospital</h3>
+          <h3 className="text-sm font-semibold tracking-tight text-mist-100">Bring your own hospital</h3>
           <ProvenanceBadge kind="SYNTHETIC" title="Uploaded configurations are your responsibility to validate; the engine checks structure and bounds only." />
         </div>
-        <p className="mt-2 text-xs text-mist-400">
+        <p className="mt-2 text-xs leading-relaxed text-mist-400">
           Upload a hospital configuration JSON (template below) and every scenario, plan and comparison will run on
           your site's beds, staff ratios, power systems and supplies. This is how the twin moves from the demo
           baseline to any hospital in minutes.
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
-          <label className="text-xs text-mist-400" htmlFor="profile-select">Active profile</label>
+          <label className="text-xs font-medium text-mist-300" htmlFor="profile-select">Active profile</label>
           <select
             id="profile-select"
             value={hospitalProfile}
             disabled={offline}
             onChange={(e) => setHospitalProfile(e.target.value)}
-            className="rounded border border-ink-600 bg-ink-900 px-2 py-1.5 text-sm text-mist-200 disabled:opacity-50">
+            className="rounded-md border border-ink-600 bg-ink-900 px-2.5 py-1.5 text-xs font-medium text-mist-200 focus:border-teal-400 focus:outline-none disabled:opacity-50">
             {profiles.length === 0 && <option value="demo">demo</option>}
             {profiles.map((p) => (
               <option key={p.id} value={p.id}>{p.id} — {p.hospital_name}</option>
@@ -187,7 +187,7 @@ export function AssumptionsPage() {
           <a
             href="/hospital_template.json"
             download
-            className="rounded border border-ink-600 px-2 py-1.5 text-xs text-mist-300 hover:border-teal-400">
+            className="rounded-md border border-ink-600 px-2.5 py-1.5 text-xs font-medium text-mist-300 transition-colors hover:border-teal-400 hover:text-teal-400">
             ⬇ Download template JSON
           </a>
           <input
@@ -197,15 +197,15 @@ export function AssumptionsPage() {
             aria-label="Upload hospital configuration JSON"
             disabled={uploading || offline}
             onChange={(e) => { const f = e.target.files?.[0]; if (f) void handleUpload(f) }}
-            className="text-xs text-mist-400 file:mr-2 file:rounded file:border-0 file:bg-teal-500 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-ink-950" />
+            className="text-xs text-mist-400 file:mr-2 file:rounded-md file:border-0 file:bg-teal-500 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-ink-950 transition-colors" />
         </div>
         {uploading && <p className="mt-2 text-xs text-mist-400">Validating and running the sanity check…</p>}
         {uploadMessage && (
-          <div role="status" className={`mt-2 rounded border p-2 text-xs ${uploadErrors.length ? 'border-rose-400/40 bg-rose-400/10 text-rose-400' : 'border-teal-400/40 bg-teal-400/10 text-teal-400'}`}>
+          <div role="status" className={`mt-2 rounded-md border p-2.5 text-xs ${uploadErrors.length ? 'border-rose-400/40 bg-rose-400/10 text-rose-400' : 'border-teal-400/40 bg-teal-400/10 text-teal-400'}`}>
             {uploadMessage}
             {uploadErrors.length > 0 && (
-              <ul className="mt-1 list-inside list-disc text-mist-300">
-                {uploadErrors.map((d, i) => <li key={i}><span className="text-mist-200">{d.field}</span>: {d.reason}</li>)}
+              <ul className="mt-1 list-inside list-disc text-mist-300 leading-normal">
+                {uploadErrors.map((d, i) => <li key={i}><span className="text-mist-200 font-medium">{d.field}</span>: {d.reason}</li>)}
               </ul>
             )}
             {uploadWarnings.map((w, i) => <p key={i} className="mt-1 text-amber-400">⚠ {w}</p>)}
@@ -214,17 +214,17 @@ export function AssumptionsPage() {
       </section>
 
       <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-        <h3 className="text-sm font-semibold text-mist-200">Datasets and calibration path</h3>
-        <ul className="mt-2 list-inside list-disc space-y-1 text-xs text-mist-300">
-          <li><span className="text-mist-200">MIMIC-IV v3.1 (PhysioNet)</span> — credentialed access under a data use agreement. Row-level data never enters this repo, prompts or logs. Only locally computed aggregates with small-cell suppression (cells &lt; 10 removed) may calibrate LOS/admission distributions, if your agreement allows. See scripts/calibrate_from_mimic.py.</li>
-          <li><span className="text-mist-200">NHS England Bed Availability and Occupancy</span> — open data (verify licence and attribution). scripts/import_nhs_beds.py converts a downloaded file into data/reference/ for optional bed-count calibration. Neither dataset represents Mayo Clinic or this fictional hospital.</li>
+        <h3 className="text-sm font-semibold tracking-tight text-mist-100">Datasets and calibration path</h3>
+        <ul className="mt-2 list-inside list-disc space-y-1.5 text-xs leading-relaxed text-mist-300">
+          <li><span className="text-mist-100 font-medium">MIMIC-IV v3.1 (PhysioNet)</span> — credentialed access under a data use agreement. Row-level data never enters this repo, prompts or logs. Only locally computed aggregates with small-cell suppression (cells &lt; 10 removed) may calibrate LOS/admission distributions, if your agreement allows. See scripts/calibrate_from_mimic.py.</li>
+          <li><span className="text-mist-100 font-medium">NHS England Bed Availability and Occupancy</span> — open data (verify licence and attribution). scripts/import_nhs_beds.py converts a downloaded file into data/reference/ for optional bed-count calibration. Neither dataset represents Mayo Clinic or this fictional hospital.</li>
           <li>The demo always runs on the synthetic baseline (rule: honest labels everywhere).</li>
         </ul>
       </section>
 
       <section className="rounded-lg border border-ink-700 bg-ink-850 p-4">
-        <h3 className="text-sm font-semibold text-mist-200">Adapting to real hospital data</h3>
-        <p className="mt-1 text-xs text-mist-400">
+        <h3 className="text-sm font-semibold tracking-tight text-mist-100">Adapting to real hospital data</h3>
+        <p className="mt-1 text-xs leading-relaxed text-mist-400">
           Use the upload panel above with data/hospital_template.json (every parameter, unit and bound documented),
           or edit the JSON directly. Field teams can map their systems to the same schema: beds per unit (physical
           and surge), nurse rosters with patients-per-nurse ratios, the electrical split (grid capacity, critical and

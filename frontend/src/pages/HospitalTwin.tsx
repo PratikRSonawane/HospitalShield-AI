@@ -12,7 +12,7 @@ export function HospitalTwinPage() {
   if (!result) {
     return (
       <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center">
-        <p className="text-sm text-mist-400">Run a scenario first (Overview or Scenario Lab).</p>
+        <p className="text-sm font-medium text-mist-300">Run a scenario first (Overview or Scenario Lab).</p>
       </div>
     )
   }
@@ -21,10 +21,10 @@ export function HospitalTwinPage() {
 
   return (
     <div className="space-y-4">
-      {offline && <p className="text-xs text-amber-400">PRECOMPUTED demo run.</p>}
+      {offline && <p className="text-xs font-medium text-amber-400">PRECOMPUTED demo run.</p>}
       <div className="rounded-lg border border-ink-700 bg-ink-850 p-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-mist-200">Hospital twin — time scrubber</h2>
+          <h2 className="text-sm font-semibold tracking-tight text-mist-100">Hospital twin — time scrubber</h2>
           <p className="text-xs text-mist-400">Status = colour + icon + text, computed by the backend each hour.</p>
         </div>
         <div className="mt-3">
@@ -33,7 +33,7 @@ export function HospitalTwinPage() {
         <div className="mt-3">
           <p className="mb-1 text-xs text-mist-400">Binding constraint ribbon (smallest margin per hour; tie order power → supplies → staff → beds → ED flow)</p>
           <BindingRibbon constraints={binding} hours={result.series.length} />
-          <div className="mt-1 flex gap-3 text-[10px] text-mist-400">
+          <div className="mt-1.5 flex gap-3 font-mono text-[10px] text-mist-400 tracking-wider">
             <span>■ power</span><span>■ supplies</span><span>■ staff</span><span>■ beds</span><span>■ ed_flow</span>
           </div>
         </div>
