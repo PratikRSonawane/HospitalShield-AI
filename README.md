@@ -166,3 +166,12 @@ information is used or produced.
 - **Track:** Healthcare (problem HC-03, Mayo Clinic — climate-resilient hospital digital twin)
 - **Result:** shortlisted among the **Top 30 of 475 registered teams** for the final round; participation certificates and hackathon swag
 - **Scope:** everything in this repository — engine, tests, dashboard and docs — was built by the team during the 24-hour event window, on top of nothing but open-source libraries and public APIs (per the event rules)
+
+<details>
+<summary><strong>Certificate of achievement</strong> (click to view)</summary>
+
+<a href="docs/certificate/fusion-2026-certificate.pdf"><img src="docs/certificate/fusion-2026-certificate.png" width="460" alt="FUSION 2026 Certificate of Achievement — International Level Hackathon, 9-10 October 2026, organized by IIC E-Cell and SKN IEEE Student Branch, SKNCOE Pune"></a>
+
+The signed original is committed alongside the code: [`docs/certificate/fusion-2026-certificate.pdf`](docs/certificate/fusion-2026-certificate.pdf) — open it to verify the result.
+
+</details>
