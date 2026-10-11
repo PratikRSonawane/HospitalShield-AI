@@ -168,10 +168,12 @@ information is used or produced.
 - **Scope:** everything in this repository — engine, tests, dashboard and docs — was built by the team during the 24-hour event window, on top of nothing but open-source libraries and public APIs (per the event rules)
 
 <details>
-<summary><strong>Certificate of achievement</strong> (click to view)</summary>
+<summary><strong>Certificates of achievement</strong> (click to view)</summary>
 
-<a href="docs/certificate/fusion-2026-certificate.pdf"><img src="docs/certificate/fusion-2026-certificate.png" width="460" alt="FUSION 2026 Certificate of Achievement — International Level Hackathon, 9-10 October 2026, organized by IIC E-Cell and SKN IEEE Student Branch, SKNCOE Pune"></a>
+| Mr. Siddhant Santosh Pardeshi | Mr. Pratik Ratnakar Sonawane |
+|:---:|:---:|
+| <a href="docs/certificate/fusion-2026-certificate-siddhant-pardeshi.pdf"><img src="docs/certificate/fusion-2026-certificate-siddhant-pardeshi.png" width="430" alt="FUSION 2026 Certificate of Achievement — Siddhant Santosh Pardeshi"></a> | <a href="docs/certificate/fusion-2026-certificate-pratik-sonawane.pdf"><img src="docs/certificate/fusion-2026-certificate-pratik-sonawane.png" width="430" alt="FUSION 2026 Certificate of Achievement — Pratik Ratnakar Sonawane"></a> |
 
-The signed original is committed alongside the code: [`docs/certificate/fusion-2026-certificate.pdf`](docs/certificate/fusion-2026-certificate.pdf) — open it to verify the result.
+Each signed original is committed alongside the code: [`Siddhant's`](docs/certificate/fusion-2026-certificate-siddhant-pardeshi.pdf) · [`Pratik's`](docs/certificate/fusion-2026-certificate-pratik-sonawane.pdf) — open them to verify the result.
 
 </details>
