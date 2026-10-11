@@ -35,3 +35,6 @@ frontend/public/demo-results.json
 
 # vite dev cache
 frontend/.vite/
+
+# local databases
+*.db
