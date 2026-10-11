@@ -27,15 +27,15 @@ export function KpiCard({ label, value, unit, delta, goodWhenDown = true, toolti
     : ''
   return (
     <div
-      className="relative rounded-lg border border-ink-700/60 bg-ink-900/60 p-3.5 transition-all hover:border-ink-600/70 hover:bg-ink-900/80 shadow-xs"
+      className="relative rounded-lg border border-ink-700 bg-ink-850 p-4"
       title={tooltip}
     >
-      <div className="text-[11px] font-semibold uppercase tracking-wider text-mist-400">{label}</div>
-      <div className="mt-1 flex items-baseline gap-1.5">
-        <span className="text-2xl font-semibold tracking-tight text-mist-100 tabular-nums">{value ?? '—'}</span>
-        <span className="text-xs font-normal text-mist-400">{unit}</span>
+      <div className="text-xs font-medium uppercase tracking-wide text-mist-400">{label}</div>
+      <div className="mt-1 flex items-baseline gap-1">
+        <span className="text-2xl font-semibold text-mist-200">{value ?? '—'}</span>
+        <span className="text-xs text-mist-400">{unit}</span>
       </div>
-      {deltaText && <div className={`mt-1 text-[11px] font-medium tabular-nums ${deltaTone}`}>{deltaText} vs baseline</div>}
+      {deltaText && <div className={`mt-1 text-xs ${deltaTone}`}>{deltaText} vs baseline</div>}
       {children}
     </div>
   )

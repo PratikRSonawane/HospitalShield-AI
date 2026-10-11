@@ -27,3 +27,11 @@ backend/.ruff_cache/
 
 # local databases
 *.db
+
+.vercel
+
+# generated offline snapshot (make snapshots)
+frontend/public/demo-results.json
+
+# vite dev cache
+frontend/.vite/

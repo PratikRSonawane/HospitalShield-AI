@@ -67,9 +67,9 @@ export function ScenarioLabPage() {
         )}
 
         {!run.result && !run.loading && (
-          <div className="rounded-lg border border-dashed border-ink-700/80 bg-ink-900/30 p-10 text-center text-xs leading-relaxed text-mist-300">
+          <div className="rounded-lg border border-dashed border-ink-600 p-10 text-center text-sm text-mist-400">
             Configure the scenario and run it. Or{' '}
-            <button className="font-medium text-teal-400 underline hover:text-teal-300" onClick={() => void run.runPlanner(request)}>
+            <button className="text-teal-400 underline" onClick={() => void run.runPlanner(request)}>
               let the planner find the best sequence
             </button>{' '}
             for this scenario.
@@ -80,13 +80,13 @@ export function ScenarioLabPage() {
           <>
             <div className="flex flex-wrap items-center gap-2 no-print">
               <button
-                className="rounded-md bg-teal-500 px-3.5 py-1.5 text-xs font-semibold text-ink-950 shadow-xs transition-all hover:bg-teal-400 active:scale-[0.99] disabled:opacity-50"
+                className="rounded bg-teal-500 px-3 py-1.5 text-sm font-semibold text-ink-950 hover:bg-teal-400 disabled:opacity-50"
                 onClick={() => void run.runPlanner(request)}
                 disabled={run.planning || locked}
               >
                 {run.planning ? 'Searching (beam search)…' : '🧭 Find optimal action sequence'}
               </button>
-              <span className="text-xs text-mist-400 leading-normal">
+              <span className="text-xs text-mist-400">
                 Deterministic search over surge / staff / shed / recall / resupply; respects lead times and feasibility.
               </span>
             </div>

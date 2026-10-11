@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index.py" }
+  ],
+  "env": {
+    "APP_ENV": "development",
+    "CORS_ALLOWED_ORIGINS": "*"
+  }
+}
