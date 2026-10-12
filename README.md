@@ -25,6 +25,12 @@ scenario ──▶ calculated operational impact ──▶ critical failure poin
 
 ---
 
+## Demo video
+
+A full working explanation of the project — problem, live walkthrough of the dashboard, failure-point
+analysis, the planner and the measured before/after comparison:
+**[Watch the walkthrough](https://drive.google.com/file/d/1bIPCsqnQbItrK3f8SSnXHScSxF_z5Z7r/view?usp=sharing)** (Google Drive, ~mp4).
+
 ## Screenshots
 
 | Overview — Command Center | Hospital Twin |
