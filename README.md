@@ -165,6 +165,7 @@ information is used or produced.
 - **Event:** FUSION 2026 (listed on Unstop) — a 24-hour international hackathon by the IIC E-Cell SKNCOE × SKN IEEE Student Branch, Smt. Kashibai Navle College of Engineering, Pune, 9–10 October 2026
 - **Track:** Healthcare (problem HC-03, Mayo Clinic — climate-resilient hospital digital twin)
 - **Result:** shortlisted among the **Top 30 of 475 registered teams** for the final round; participation certificates and hackathon swag
+- **Team:** [Siddhant Pardeshi](https://github.com/siddhant-pardeshi) · [Pratik Sonawane](https://github.com/PratikRSonawane) · [Jerry Lalrinmawia](https://github.com/imadajerry) · Ishan Karande
 - **Scope:** everything in this repository — engine, tests, dashboard and docs — was built by the team during the 24-hour event window, on top of nothing but open-source libraries and public APIs (per the event rules)
 
 <details>
